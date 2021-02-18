@@ -4,7 +4,8 @@ const cors = require('cors');
 const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
-
+//  Add the routes to the Express application by importing with the other imports in backend/app.js
+const routes = require('./routes');
 
 //  Create a variable called isProduction that will be true
 //  if the environment is in production or not by checking
@@ -24,6 +25,7 @@ app.use(cookieParser());
 //  and the express.json middleware for parsing JSON bodies of requests with Content-Type of "application/json".
 app.use(express.json());
 
+
 //  enable cors only in development
 if (!isProduction) app.use(cors());
 
@@ -37,8 +39,13 @@ app.use(
     csurf({
         cookie: {
             secure: isProduction,
-            sameSite: isProduction && 'Lax',
+            sameSite: isProduction && "Lax",
             httpOnly: true,
         },
     })
-);
+    );
+
+//  connect all the routes from the exported router to app
+app.use(routes);
+
+module.exports = app;
