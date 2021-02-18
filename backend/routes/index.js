@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const apiRouter = require('./api');
+const { environment } = require('../config');
+const isProduction = environment === 'production';
 
 router.use('/api', apiRouter);
 
@@ -9,9 +11,10 @@ router.use('/api', apiRouter);
 //  method's return. Then, you are sending the text, Hello World!
 //  as the response's body.
 
-router.get('/hello/world', function(req, res) {
-    console.log(res.cookie('XSRF-TOKEN', req.csrfToken()));
-    res.send('Hello World!');
-});
+// router.get('/hello/world', function(req, res) {
+//     res.cookie('XSRF-TOKEN', req.csrfToken());
+//     !isProduction && console.log('XSRF-TOKEN::: ', req.cookies['XSRF-TOKEN'])
+//     res.send('Hello World!');
+// });
 
 module.exports = router;
