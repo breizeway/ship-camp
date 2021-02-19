@@ -16,8 +16,6 @@ const LoginFormPage = () => {
   const [validationErrors, setValidationErrors] = useState([]);
 
   if (sessionUser) history.push('/');
-  //  !todo: shouldn't this redirect if I try to go to this page and am already logged in?
-  //    where does state come from?
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -30,14 +28,14 @@ const LoginFormPage = () => {
   }
 
   return (
-    <div className='login-form'>
+    <div>
       <h1>Login</h1>
       <div>
         {validationErrors && validationErrors.map((error, idx) => (
           <p key={idx}>{error}</p>
         ))}
       </div>
-      <form onSubmit={submitHandler}>
+      <form className='credential-form' onSubmit={submitHandler}>
         <div>
           <label htmlFor='credential'>Username or Email</label>
           <input
