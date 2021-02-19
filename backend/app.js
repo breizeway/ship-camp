@@ -37,15 +37,13 @@ app.use(helmet({
 }));
 
 //  set the _csrf token and create req.csrfToken method
-app.use(
-    csurf({
-        cookie: {
-            secure: isProduction,
-            sameSite: isProduction && "Lax",
-            httpOnly: true,
-        },
-    })
-    );
+app.use(csurf({
+    cookie: {
+        secure: isProduction,
+        sameSite: isProduction && "Lax",
+        httpOnly: true,
+    },
+}));
 
 //  connect all the routes from the exported router to app
 app.use(routes);
@@ -56,17 +54,17 @@ app.use((_req, _res, next) => {
     err.title = 'Resource Not Found';
     err.errors = ['The requested resource couldn\'t be found.'];
     err.status = 404;
-    next(err); // if no argument was passed in, then the next middleware would not be invoked
+    next(err); // if no argument was passed in, then the next middleware will not be invoked
 });
 
 app.use((err, _req, _res, next) => {
     // check if the error is a Sequelize error
     if (err instanceof ValidationError) {
         err.errors = err.errors.map((e) => e.message);
-        err.title = 'Validation error';
+        err.title = 'Validation Error';
     }
     next(err);
-})
+});
 
 //  The last error handler is for formatting all the errors before returning a JSON
 //  response with the error message, the errors array, and the error stack trace (if

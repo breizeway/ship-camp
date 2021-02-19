@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+import { restoreCSRF, csrfFetch } from './store/csrf';
 
 import './index.css';
 import App from './App';
@@ -9,7 +10,13 @@ import configureStore from './store';
 
 const store = configureStore();
 const isProduction = process.env.NODE_ENV === 'production';
-if (!isProduction) window.store = store;
+
+if (!isProduction) {
+  restoreCSRF();
+
+  window.csrfFetch = csrfFetch;
+  window.store = store;
+}
 
 function Root() {
   return (
