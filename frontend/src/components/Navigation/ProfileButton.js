@@ -23,7 +23,7 @@ function ProfileButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  const logout = (e) => {
+  const logout = e => {
     e.preventDefault();
     dispatch(sessionActions.logout());
   };
