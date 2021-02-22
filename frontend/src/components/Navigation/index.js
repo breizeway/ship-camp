@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import ProfileButton from './ProfileButton';
+import Logo from './Logo';
 import './Navigation.css';
 
 const Navigation = ({ isLoaded }) => {
@@ -22,12 +23,15 @@ const Navigation = ({ isLoaded }) => {
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to='/'>Home</NavLink>
+    <div className='main-nav-bar'>
+      <div className='main-nav-bar__home'>
+        <Logo />
+        <h2>Shipcamp</h2>
+      </div>
+      <div className='main-nav-bar__links'>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      </div>
+    </div>
   )
 }
 
