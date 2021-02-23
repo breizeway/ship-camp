@@ -26,7 +26,6 @@ const Navigation = ({ isLoaded }) => {
     <div className='main-nav-bar'>
       <div className='main-nav-bar__home'>
         <Logo />
-        <h2>Shipcamp</h2>
       </div>
       <div className='main-nav-bar__links'>
         {isLoaded && sessionLinks}

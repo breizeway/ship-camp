@@ -1,8 +1,28 @@
 .logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-image {
   display: block;
-  height: 80%;
-  width: 60px;
-  background-image: url('./logo2.png');
+  height: 26px;
+  width: 20px;
+  margin: 0 3px;
+  background-image: url('../../assets/images/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.logo-text {
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+  border: none;
+  color: var(--theme1)
 }
