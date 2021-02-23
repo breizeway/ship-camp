@@ -23,6 +23,23 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING.BINARY
       },
+      firstName: {
+        allowNull: false,
+        type: Sequelize.STRING(64)
+      },
+      lastName: {
+        allowNull: false,
+        type: Sequelize.STRING(64)
+      },
+      profileImageUrl: {
+        defaultValue: null,
+        type: Sequelize.STRING(256)
+      },
+      isHost: {
+        allowNull: false,
+        defaultValue: false,
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         defaultValue: Sequelize.fn('now'),

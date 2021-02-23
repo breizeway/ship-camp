@@ -15,6 +15,8 @@ const SignupFormPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [validationErrors, setValidationErrors] = useState([]);
 
   if (sessionUser) history.push('/');
@@ -25,7 +27,7 @@ const SignupFormPage = () => {
     if (password !== confirmPassword) {
       return setValidationErrors(['Your password and your confirmed password must match.'])
     } else {
-      return dispatch(sessionActions.signup({ email, username, password }))
+      return dispatch(sessionActions.signup({ email, username, password, firstName, lastName }))
       .catch(async res => {
           const data = await res.json();
           if (data && data.errors) setValidationErrors(data.errors);
@@ -57,6 +59,24 @@ const SignupFormPage = () => {
             type='text'
             value={username}
             onChange={e => setUsername(e.target.value)}
+            required
+          ></input>
+        </div>
+        <div>
+          <label htmlFor='firstName'>First Name</label>
+          <input
+            type='text'
+            value={firstName}
+            onChange={e => setFirstName(e.target.value)}
+            required
+          ></input>
+        </div>
+        <div>
+          <label htmlFor='lastName'>Last Name</label>
+          <input
+            type='text'
+            value={lastName}
+            onChange={e => setLastName(e.target.value)}
             required
           ></input>
         </div>

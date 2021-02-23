@@ -28,6 +28,29 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [3, 64]
+      },
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [3, 64]
+      },
+    },
+    profileImageUrl: {
+      type: DataTypes.STRING,
+      validate: {
+        len: [3, 256]
+      },
+    },
+    isHost: {
+      type: DataTypes.BOOLEAN,
+    },
   },
   {
     defaultScope: {
@@ -49,8 +72,8 @@ module.exports = (sequelize, DataTypes) => {
   return an object with the User instance information that is safe to save to a JWT.
   */
   User.prototype.toSafeObject = function() {
-    const { id, username, email } = this;
-    return { id, username, email };
+    const { id, username, email, firstName, lastName } = this;
+    return { id, username, email, firstName, lastName };
   }
   /*
   Define an instance method, User.prototype.validatePassword in the user.js model file that will
@@ -94,12 +117,14 @@ module.exports = (sequelize, DataTypes) => {
   Create a User with the username, email, and hashedPassword.
   Return the created user with the currentUser scope.
   */
-  User.signup = async function ({ username, email, password }) {
+  User.signup = async function ({ username, email, password, firstName, lastName }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
       username,
       email,
       hashedPassword,
+      firstName,
+      lastName
     });
     return await User.scope('currentUser').findByPk(user.id);
   };
