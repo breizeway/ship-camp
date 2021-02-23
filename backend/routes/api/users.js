@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
 const { User } = require('../../db/models');
 const { handleValidationErrors } = require('../../utils/validation');
-const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
+const { singlePublicFileUpload, singleMulterUpload } = require('../../backblazeS3');
 
 const validateSignup = [
   check('email')
@@ -45,7 +45,6 @@ router.post(
   asyncHandler(async (req, res) => {
     const { email, password, username, firstName, lastName } = req.body;
     const profileImageUrl = await singlePublicFileUpload(req.file);
-    console.log('   :::PROFILEIMAGEURL:::   ', profileImageUrl);
     const user = await User.signup({
       email,
       username,
