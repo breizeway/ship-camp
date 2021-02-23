@@ -4,6 +4,7 @@ const cors = require('cors');
 const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+const bodyParser = require("body-parser");
 
 //  Add the routes to the Express application by importing with the other imports in backend/app.js
 const routes = require('./routes');
@@ -26,7 +27,8 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 
 //  and the express.json middleware for parsing JSON bodies of requests with Content-Type of "application/json".
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //  enable cors only in development
 if (!isProduction) app.use(cors());
