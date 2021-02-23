@@ -1,27 +1,19 @@
 const AWS = require("aws-sdk");
-// name of your bucket here
-const NAME_OF_BUCKET = "ship-camp";
-
 const multer = require("multer");
+
+
 
 //  make sure to set environment variables in production for:
 //  AWS_ACCESS_KEY_ID
 //  AWS_SECRET_ACCESS_KEY
 //  and aws will automatically use those environment variables
+// const credentials = new AWS.SharedIniFileCredentials({profile: 'b2'});
+// AWS.config.credentials = credentials;
+const ep = new AWS.Endpoint('s3.us-west-002.backblazeb2.com');
+const s3 = new AWS.S3({ apiVersion: "2006-03-01", endpoint: ep });
 
-const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
-s3.config.endpoint = 's3.us-west-002.backblazeb2.com';
-s3.config.region = 'us-west-002'
-s3.endpoint = {
-  protocol: 'https:',
-  host: 's3.backblazeb2.com',
-  port: 443,
-  hostname: 's3.backblazeb2.com',
-  pathname: '/',
-  path: '/',
-  href: 'https://s3.backblazeb2.com/'
-}
-console.log('   :::S3:::   ', s3);
+// name of your bucket here
+const NAME_OF_BUCKET = "ship-camp";
 
 // --------------------------- Public UPLOAD ------------------------
 
@@ -97,6 +89,7 @@ const storage = multer.memoryStorage({
 
 const singleMulterUpload = (nameOfKey) =>
   multer({ storage: storage }).single(nameOfKey);
+
 const multipleMulterUpload = (nameOfKey) =>
   multer({ storage: storage }).array(nameOfKey);
 

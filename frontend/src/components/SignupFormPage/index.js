@@ -17,6 +17,7 @@ const SignupFormPage = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [image, setImage] = useState(null);
   const [validationErrors, setValidationErrors] = useState([]);
 
   if (sessionUser) history.push('/');
@@ -27,13 +28,18 @@ const SignupFormPage = () => {
     if (password !== confirmPassword) {
       return setValidationErrors(['Your password and your confirmed password must match.'])
     } else {
-      return dispatch(sessionActions.signup({ email, username, password, firstName, lastName }))
+      return dispatch(sessionActions.signup({ email, username, password, firstName, lastName, image }))
       .catch(async res => {
           const data = await res.json();
           if (data && data.errors) setValidationErrors(data.errors);
       })
     }
   }
+
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(file);
+  };
 
   return (
     <div>
@@ -79,6 +85,11 @@ const SignupFormPage = () => {
             onChange={e => setLastName(e.target.value)}
             required
           ></input>
+        </div>
+        <div>
+          <label>
+            <input type="file" onChange={updateFile} />
+          </label>
         </div>
         <div>
           <label htmlFor='password'>Password</label>
