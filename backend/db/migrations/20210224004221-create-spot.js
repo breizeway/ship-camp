@@ -30,14 +30,6 @@ module.exports = {
         type: Sequelize.TIME,
         defaultValue: '11:00'
       },
-      cancellationPolicy: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
-      onArrival: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
       minStay: {
         allowNull: false,
         type: Sequelize.INTEGER
@@ -50,17 +42,36 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      walk: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
       shelterIsProvided: {
         allowNull: false,
         type: Sequelize.BOOLEAN
       },
-      shelterType: {
+      shelterTypeId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'ShelterTypes'
+        }
+      },
+      cancellationPolicyId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'CancellationPolicies'
+        }
+      },
+      arrivalTypeId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'ArrivalTypes'
+        }
+      },
+      accessTypeId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'AccessTypes'
+        }
       },
       hostId: {
         allowNull: false,
