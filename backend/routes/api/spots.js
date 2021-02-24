@@ -40,6 +40,7 @@ router.get(
   '/',
   asyncHandler(async (req, res) => {
     console.log('   :::REQ.BODY:::   ', req.body);
+    console.log('   :::REQ.BODY:::   ', req.body);
     const { text, date, accom } = req.body;
     const spots = await Spots.findAll({
       where: {
