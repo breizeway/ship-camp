@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import * as sessionActions from '../../store/session';
 
-import './LoginFormPage.css'
+import './index.css'
 
 const LoginFormPage = () => {
   const dispatch = useDispatch();
@@ -24,8 +24,11 @@ const LoginFormPage = () => {
       .catch(async res => {
         const data = await res.json();
         if (data && data.errors) setValidationErrors(data.errors);
+        // todo: display val errors better
       })
   }
+
+  const demoUser = () => dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }));
 
   return (
     <div>
@@ -54,7 +57,12 @@ const LoginFormPage = () => {
             required
           ></input>
         </div>
-        <button type='submit'>Log In</button>
+        <div>
+          <button type='submit'>Log In</button>
+        </div>
+        <div>
+          <button onClick={demoUser}>Demo User</button>
+        </div>
       </form>
     </div>
   )

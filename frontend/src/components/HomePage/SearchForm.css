@@ -21,18 +21,18 @@
 .search-form__inputs-div > div {
   height: 70px;
   display: flex;
-  flex-grow: 5;
+  flex-grow: 9;
   flex-direction: column;
   justify-content: flex-end;
   padding-right: 16px;
 }
 
 .search-form__inputs-div > div:nth-child(2) {
-  flex-grow: 3;
+  flex-grow: 1;
 }
 
 .search-form__inputs-div > div:nth-child(3) {
-  flex-grow: 2;
+  flex-grow: 4;
 }
 
 .search-form__inputs-div label {

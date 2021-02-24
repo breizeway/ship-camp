@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import ProfileButton from './ProfileButton';
 import Logo from './Logo';
-import './Navigation.css';
+import './index.css';
 
 const Navigation = ({ isLoaded }) => {
   const sessionUser = useSelector(state => state.session.user);
