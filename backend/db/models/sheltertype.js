@@ -1,7 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const ShelterType = sequelize.define('ShelterType', {
-    description: DataTypes.STRING
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [3, 64]
+      },
+    },
   }, {});
   ShelterType.associate = function(models) {
     // associations can be defined here

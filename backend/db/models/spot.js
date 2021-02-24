@@ -86,6 +86,10 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Spot.associate = function(models) {
+    Spot.belongsTo(models.ShelterType, {foreignKey: 'shelterTypeId'});
+    Spot.belongsTo(models.CancellationPolicy, {foreignKey: 'cancellationPolicyId'});
+    Spot.belongsTo(models.ArrivalType, {foreignKey: 'arrivalTypeId'});
+    Spot.belongsTo(models.AccessType, {foreignKey: 'accessTypeId'});
     Spot.belongsTo(models.User, {foreignKey: 'hostId'});
   };
   return Spot;

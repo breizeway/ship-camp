@@ -1,7 +1,13 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const ArrivalType = sequelize.define('ArrivalType', {
-    description: DataTypes.STRING
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [3, 64]
+      },
+    },
   }, {});
   ArrivalType.associate = function(models) {
     // associations can be defined here
