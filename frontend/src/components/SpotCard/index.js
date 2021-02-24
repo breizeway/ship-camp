@@ -1,4 +1,6 @@
-const SpotCard = () => {
+import { Link } from 'react-router-dom';
+
+const SpotCard = ({ spot }) => {
   return (
     <div
       style={{
@@ -11,7 +13,7 @@ const SpotCard = () => {
         width: '200px',
       }}
     >
-      <p>SpotCard component placeholder</p>
+      <p>{JSON.stringify(spot)}</p>
     </div>
   )
 }

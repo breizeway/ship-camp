@@ -30,7 +30,7 @@ export const login = user => async dispatch => {
   return response;
 };
 
-export const signup = (user) => async (dispatch) => {
+export const signup = user => async (dispatch) => {
   const { images, image, username, email, password, firstName, lastName } = user;
   const formData = new FormData();
   formData.append("username", username);

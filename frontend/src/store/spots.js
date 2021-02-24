@@ -11,9 +11,10 @@ const setSearchedSpots = spots => {
 
 export const getSpots = searchData => async dispatch => {
   const { text, date, accom } = searchData;
+  console.log('   :::TEXT:::   ', text);
   console.log('store/getSpots: before csrfFetch')
   const response = await csrfFetch('/api/spots', {
-    method: 'GET',
+    method: 'POST',
     body: JSON.stringify({
       text,
       date,
@@ -37,7 +38,8 @@ const spotsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_SEARCHED_SPOTS:
       newState = {...state};
-      newState.searchedSpots = action.payload;
+      const { spots } = action.payload;
+      newState.searchedSpots = spots;
       return newState;
     default:
       return state;
