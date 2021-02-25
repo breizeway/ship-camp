@@ -14,6 +14,7 @@
   border: 1px solid var(--border);
   width: 400px;
   padding: 20px;
+  background-color: var(--background);
 }
 
 .profile-dropdown > div {
