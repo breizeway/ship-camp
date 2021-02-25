@@ -34,18 +34,28 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
-      </button>
+      <div className='navigation__icon' onClick={openMenu}>
+        <div className='navigation__icon-inner'></div>
+      </div>
       {showMenu && (
         <div className="profile-dropdown">
-          <div>{user.username}</div>
-          <div>{user.email}</div>
-          <div>{user.firstName}</div>
-          <div>{user.lastName}</div>
           <div>
-            <button onClick={logout}>Log Out</button>
+            <p>Username:</p>
+            <p>{user.username}</p>
           </div>
+          <div>
+            <p>Email:</p>
+            <p>{user.email}</p>
+          </div>
+          <div>
+            <p>First Name:</p>
+            <p>{user.firstName}</p>
+          </div>
+          <div>
+            <p>Last Name:</p>
+            <p>{user.lastName}</p>
+          </div>
+          <div onClick={logout}>Log Out</div>
         </div>
       )}
     </>

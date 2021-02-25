@@ -1,6 +1,50 @@
+.navigation__icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile-dropdown {
   position: absolute;
   top: 70px;
-  border-radius: 4px;
-  background-color: aqua;
+  border: 1px solid var(--border);
+  width: 400px;
+  padding: 20px;
+}
+
+.profile-dropdown > div {
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.profile-dropdown > div > p {
+  margin: 0;
+}
+
+.profile-dropdown > div > p:nth-child(1) {
+  font-weight: bold;
+}
+
+.profile-dropdown > div:last-child {
+  padding-bottom: 0;
+}
+
+.profile-dropdown > div:last-child:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.navigation__icon-inner {
+  width: 50%;
+  height: 50%;
+  background-image: url('../../assets/images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
