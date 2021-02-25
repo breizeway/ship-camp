@@ -21,6 +21,7 @@
   color: black;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  padding-bottom: 6px;
   overflow: hidden;
 }
 
@@ -39,8 +40,40 @@
   grid-template: repeat(3, 1fr) / 1fr;
 }
 
-.spot-card__name {
+.spot-card__name-div {
   font-size: 22px;
   font-weight: 500;
   padding-top: 6px;
+}
+
+.spot-card__price-host-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spot-card__host {
+  color: gray;
+  font-weight: 300;
+  display: flex;
+  align-items: flex-end;
+}
+
+.spot-card__host > p {
+  margin: 0;
+}
+
+.spot-card__price {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.spot-card__price > p:nth-child(1) {
+  font-size: 22px;
+  margin: 0;
+}
+
+.spot-card__price > p:nth-child(2) {
+  font-size: 16px;
+  margin-bottom: 3px;
 }

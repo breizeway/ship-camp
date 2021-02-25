@@ -19,9 +19,21 @@ const SpotCard = ({ spot }) => {
             }}
           ></div>
           <div className='spot-card__details'>
-            <div className='spot-card__name'>{spot.name}</div>
-            <div className='spot-card__name'>10 Reviews</div>
-            <div className='spot-card__name'>{`$${spot.price}/night`}</div>
+            <div className='spot-card__name-div'>
+              <div className='spot-card__name'>{spot.name}</div>
+            </div>
+            <div className='spot-card__reviews-div'>
+              <div className='spot-card__reviews'>10 Reviews</div>
+            </div>
+            <div className='spot-card__price-host-div'>
+              <div className='spot-card__host'>
+                <p>{`Hosted by ${spot.Host.firstName}`}</p>
+              </div>
+              <div className='spot-card__price'>
+                <p>{`$${spot.price}`}</p>
+                <p>{`/NIGHT`}</p>
+              </div>
+            </div>
           </div>
         </Link>
       </div>
