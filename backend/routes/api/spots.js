@@ -15,31 +15,18 @@ router.post(
         name: { [Op.iLike]: `%${text}%` }
       },
       include: [
-        {
-          model: ShelterType
-        },
-        {
-          model: CancellationPolicy
-        },
-        {
-          model: ArrivalType
-        },
-        {
-          model: AccessType
-        },
-        {
-          model: User,
+        {model: ShelterType},
+        {model: CancellationPolicy},
+        {model: ArrivalType},
+        {model: AccessType},
+        {model: User,
           as: 'Host',
           attributes: {
             exclude: ['hashedPassword', 'email', 'username', 'isHost']
           }
         },
-        {
-          model: Photo
-        },
-        {
-          model: Amenity
-        },
+        {model: Photo},
+        {model: Amenity},
       ]
       })
     return res.json({spots});
