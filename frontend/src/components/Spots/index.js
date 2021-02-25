@@ -8,12 +8,15 @@ const Spots = () => {
 
   return (
     <div className='spots'>
-      {
-        spots &&
-        spots.map(spot => (
-          <SpotCard spot={spot} key={Object.keys(spot)}/>
-        ))
-      }
+      <div className='spot__cards'>
+        {
+          spots &&
+          spots.map(spot => (
+            <SpotCard spot={Object.values(spot)[0]} key={Object.keys(spot)}/>
+          ))
+        }
+      </div>
+      <div className='spots__map'></div>
     </div>
   )
 }

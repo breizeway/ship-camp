@@ -1,7 +1,17 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
 
-const { Sequelize, Spot, ShelterType, CancellationPolicy, ArrivalType, AccessType, User, Photo, Amenity } = require('../../db/models');
+const {
+  Sequelize,
+  Spot,
+  ShelterType,
+  CancellationPolicy,
+  ArrivalType,
+  AccessType,
+  User,
+  Photo,
+  Amenity
+} = require('../../db/models');
 const Op = Sequelize.Op;
 
 const router = express.Router();

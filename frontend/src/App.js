@@ -27,14 +27,20 @@ function App() {
           className='main-nav'
           style={{
             maxWidth: !isHome && '100%',
-            padding: !isHome && '0 29px'
+            padding: !isHome && '0 30px'
           }}
         >
           <Navigation isLoaded={isLoaded} isHome={isHome}/>
         </div>
       </div>
       <div className='main-view-wrapper'>
-        <div className='main-view'>
+        <div
+          className='main-view'
+          style={{
+            maxWidth: !isHome && '100%',
+            padding: !isHome && '0'
+          }}
+        >
           {isLoaded && (
             <Switch>
               <Route exact path='/'>

@@ -1,23 +1,30 @@
 import { Link } from 'react-router-dom';
 
+import './index.css';
+
 const SpotCard = ({ spot }) => {
   console.log('   :::SPOT:::   ', spot);
+
   return (
-    <div>
-      <Link
-        to={`spots/${Object.keys(spot)}`}
-        style={{
-          borderRadius: '10px',
-          backgroundColor: 'teal',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: '200px',
-          width: '200px',
-        }}
-      >
-        <p>{Object.values(spot)[0].name}</p>
-      </Link>
+    <div className='spot-card'>
+      <div className='spot-card__main'>
+        <Link
+          to={`spots/${spot.id}`}
+          className='spot-card__link'
+        >
+          <div
+            className='spot-card__image'
+            style={{
+              backgroundImage: `url('${spot.Photos[0].url}')`
+            }}
+          ></div>
+          <div className='spot-card__details'>
+            <div className='spot-card__name'>{spot.name}</div>
+            <div className='spot-card__name'>10 Reviews</div>
+            <div className='spot-card__name'>{`$${spot.price}/night`}</div>
+          </div>
+        </Link>
+      </div>
     </div>
   )
 }
