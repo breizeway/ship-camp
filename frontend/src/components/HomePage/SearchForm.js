@@ -16,12 +16,12 @@ const SearchForm = () => {
 
   const submitHandler = e => {
     e.preventDefault();
-    const spots = dispatch(spotsActions.getSpots({ text, date, accom }))
-    .catch(async res => {
+    // const spots = dispatch(spotsActions.getSpots({ text, date, accom }))
+    // .catch(async res => {
 
-      // todo: set and display validation errors
-    })
-    history.push('/spots');
+    //   // todo: set and display validation errors
+    // })
+    history.push(`/spots/?text=${text}${date && `&date=${date}`}${accom && `&accom=${accom}`}`);
   }
 
   return (

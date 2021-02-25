@@ -16,10 +16,11 @@ const Op = Sequelize.Op;
 
 const router = express.Router();
 
-router.post(
+router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const { text } = req.body;
+    const { text, date, accom } = req.query;
+
     const spots = await Spot.findAll({
       where: {
         name: { [Op.iLike]: `%${text}%` }

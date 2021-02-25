@@ -9,7 +9,7 @@ const setSearchedSpots = spots => {
   };
 };
 
-export const getSpots = searchData => async dispatch => {
+export const getSpotsOld = searchData => async dispatch => {
   const { text, date, accom } = searchData;
   const response = await csrfFetch('/api/spots', {
     method: 'POST',
@@ -24,14 +24,15 @@ export const getSpots = searchData => async dispatch => {
   return response;
 };
 
-getSpots()
+export const getSpots = queryString => async dispatch => {
+  const response = await csrfFetch(`/api/spots/${queryString}`)
+  const spots = await response.json();
+  const searchedSpots = await dispatch(setSearchedSpots(spots));
+  return searchedSpots.payload.spots;
+};
 
 const initialState = {
   spots: null,
-}
-
-const spotsFlattener = spots => {
-  return
 }
 
 const spotsReducer = (state = initialState, action) => {

@@ -1,9 +1,20 @@
-import SpotCard from '../SpotCard';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 import './index.css';
+import { getSpots } from '../../store/spots';
+import SpotCard from '../SpotCard';
 
 const Spots = () => {
+  const dispatch = useDispatch();
+
+  const queryString = useLocation().search;
+
+  useEffect(() => {
+    dispatch(getSpots(queryString));
+  }, [])
+
   const spots = useSelector(state => state.spots.searchedSpots);
 
   return (

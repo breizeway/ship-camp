@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './index.css';
 
 const SpotCard = ({ spot }) => {
-  console.log('   :::SPOT:::   ', spot);
 
   return (
     <div className='spot-card'>
