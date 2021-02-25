@@ -27,7 +27,7 @@ const SpotCard = ({ spot }) => {
             </div>
             <div className='spot-card__price-host-div'>
               <div className='spot-card__host'>
-                <p>{`Hosted by ${spot.Host.firstName}`}</p>
+                <p>{`Hosted by ${spot.Host.firstName} ${spot.Host.lastName[0]}.`}</p>
               </div>
               <div className='spot-card__price'>
                 <p>{`$${spot.price}`}</p>

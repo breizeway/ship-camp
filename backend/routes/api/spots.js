@@ -25,6 +25,28 @@ router.post(
         name: { [Op.iLike]: `%${text}%` }
       },
       include: [
+        {model: User,
+          as: 'Host',
+          attributes: {
+            exclude: ['hashedPassword', 'email', 'username', 'isHost']
+          }
+        },
+        {model: Photo},
+      ]
+      })
+    return res.json({spots});
+  })
+)
+
+router.get(
+  '/:id',
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const spot = await Spot.findAll({
+      where: {
+        id
+      },
+      include: [
         {model: ShelterType},
         {model: CancellationPolicy},
         {model: ArrivalType},
@@ -38,8 +60,8 @@ router.post(
         {model: Photo},
         {model: Amenity},
       ]
-      })
-    return res.json({spots});
+      })[0]
+    return res.json({spot});
   })
 )
 

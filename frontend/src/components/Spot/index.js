@@ -2,7 +2,7 @@ import './index.css';
 
 const Spot = () => {
   return (
-    <div>Spot goes here</div>
+    <div className='spot'>Spot goes here</div>
   )
 }
 

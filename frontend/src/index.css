@@ -4,7 +4,7 @@
   --background: rgb(243, 242, 239);
   --background-darker: rgb(235, 234, 229);
   --border: rgb(225, 221, 230);
-
+  --padding-not-home: 30px;
 }
 
 * {
