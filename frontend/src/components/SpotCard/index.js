@@ -16,7 +16,7 @@ const SpotCard = ({ spot }) => {
           width: '200px',
         }}
       >
-        <p>{spot[Object.keys(spot)].name}</p>
+        <p>{Object.values(spot)[0].name}</p>
       </Link>
     </div>
   )
