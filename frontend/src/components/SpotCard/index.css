@@ -21,7 +21,7 @@
   color: black;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
   overflow: hidden;
 }
 
@@ -56,9 +56,11 @@
   font-weight: 300;
   display: flex;
   align-items: flex-end;
+  flex-grow: 1;
 }
 
 .spot-card__host > p {
+  display: block;
   margin: 0;
 }
 
@@ -75,5 +77,5 @@
 
 .spot-card__price > p:nth-child(2) {
   font-size: 16px;
-  margin-bottom: 3px;
+  margin: 0 0 3px 0;
 }

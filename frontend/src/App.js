@@ -5,6 +5,7 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import Navigation from '../src/components/Navigation';
 import HomePage from '../src/components/HomePage';
 import Spots from '../src/components/Spots';
+import Spot from '../src/components/Spot';
 import LoginFormPage from '../src/components/LoginFormPage';
 import SignupFormPage from '../src/components/SignupFormPage';
 import * as sessionActions from "./store/session";
@@ -46,8 +47,11 @@ function App() {
               <Route exact path='/'>
                 <HomePage />
               </Route>
-              <Route exact path='/spots/'>
+              <Route exact path='/spots'>
                 <Spots />
+              </Route>
+              <Route exact path='/spots/:id'>
+                <Spot />
               </Route>
               <Route path='/login'>
                 <LoginFormPage />
