@@ -11,7 +11,7 @@ const Spots = () => {
       {
         spots &&
         spots.map(spot => (
-          <SpotCard spot={spot}/>
+          <SpotCard spot={spot} key={Object.keys(spot)}/>
         ))
       }
     </div>

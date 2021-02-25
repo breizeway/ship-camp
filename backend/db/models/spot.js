@@ -90,7 +90,15 @@ module.exports = (sequelize, DataTypes) => {
     Spot.belongsTo(models.CancellationPolicy, {foreignKey: 'cancellationPolicyId'});
     Spot.belongsTo(models.ArrivalType, {foreignKey: 'arrivalTypeId'});
     Spot.belongsTo(models.AccessType, {foreignKey: 'accessTypeId'});
-    Spot.belongsTo(models.User, {foreignKey: 'hostId'});
+    Spot.belongsTo(models.User, {foreignKey: 'hostId', as: 'Host'});
+    Spot.hasMany(models.Photo, {foreignKey: 'spotId'})
+    //Spot.hasMany(models.SpotAmenity, {foreignKey: 'spotId'})
+    const columnMapping = {
+      through: 'SpotAmenity',
+      foreignKey: 'spotId',
+      otherKey: 'amenityId'
+    }
+    Spot.belongsToMany(models.Amenity, columnMapping);
   };
   return Spot;
 };

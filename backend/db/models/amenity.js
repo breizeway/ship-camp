@@ -10,7 +10,13 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Amenity.associate = function(models) {
-    // associations can be defined here
+    // Amenity.hasMany(models.SpotAmenity, {foreignKey: 'amenityId'})
+    const columnMapping = {
+      through: 'SpotAmenity',
+      foreignKey: 'amenityId',
+      otherKey: 'spotId'
+    }
+    Amenity.belongsToMany(models.Spot, columnMapping);
   };
   return Amenity;
 };
