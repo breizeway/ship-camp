@@ -39,6 +39,22 @@ module.exports = {
         url: 'https://ship-camp.s3.us-west-002.backblazeb2.com/spots/titanic-3.jpg',
         spotId: 3,
       },
+      {
+        url: 'https://ship-camp.s3.us-west-002.backblazeb2.com/spots/belafonte-1.jpg',
+        spotId: 4,
+      },
+      {
+        url: 'https://ship-camp.s3.us-west-002.backblazeb2.com/spots/belafonte-2.jpg',
+        spotId: 4,
+      },
+      {
+        url: 'https://ship-camp.s3.us-west-002.backblazeb2.com/spots/belafonte-3.jpg',
+        spotId: 4,
+      },
+      {
+        url: 'https://ship-camp.s3.us-west-002.backblazeb2.com/spots/belafonte-4.jpg',
+        spotId: 4,
+      },
     ], {});
   },
 

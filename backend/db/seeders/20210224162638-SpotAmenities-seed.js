@@ -103,6 +103,36 @@ module.exports = {
         amenityId: 9,
         available: true,
       },
+      {
+        spotId: 4,
+        amenityId: 1,
+        available: true,
+      },
+      {
+        spotId: 4,
+        amenityId: 2,
+        available: true,
+      },
+      {
+        spotId: 4,
+        amenityId: 3,
+        available: true,
+      },
+      {
+        spotId: 4,
+        amenityId: 6,
+        available: true,
+      },
+      {
+        spotId: 4,
+        amenityId: 7,
+        available: true,
+      },
+      {
+        spotId: 4,
+        amenityId: 8,
+        available: true,
+      },
     ], {});
   },
 

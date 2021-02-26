@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.navigation__icon:hover {
+  cursor: pointer;
+}
+
 .profile-dropdown {
   position: absolute;
   top: 70px;
@@ -15,6 +19,7 @@
   width: 400px;
   padding: 20px;
   background-color: white;
+  border-radius: 20px;
   z-index: 999;
 }
 

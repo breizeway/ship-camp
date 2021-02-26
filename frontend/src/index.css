@@ -1,10 +1,10 @@
 :root {
   --theme1: rgb(50, 25, 75);
-  --theme2: rgb(134, 102, 187);
+  --theme2: rgb(162, 104, 255);
   --theme2-vals: 134, 102, 187;
   --background: rgb(243, 242, 239);
   --background-darker: rgb(235, 234, 229);
-  --border: rgb(225, 221, 230);
+  --border: rgb(219, 215, 223);
 
   --padding-not-home: 30px;
 
@@ -67,4 +67,23 @@ img.x-form-date-trigger {
   height: 100%;
   max-width: var(--narrow-view-max-width);
   padding: 0 var(--narrow-view-padding) var(--narrow-view-padding);
+}
+
+.submit-button {
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--theme2);
+  background-color: var(--theme2);
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  background-color: var(--background);
+  color: var(--theme2);
+  transition-duration: 0.2s;
 }

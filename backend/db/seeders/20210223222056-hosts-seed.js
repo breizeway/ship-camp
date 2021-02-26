@@ -31,6 +31,15 @@ module.exports = {
         profileImageUrl: 'https://ship-camp.s3.us-west-002.backblazeb2.com/hosts/white-star-line.png',
         isHost: true
       },
+      {
+        username: 'steve_zissou',
+        email: 'steve@zissou.me',
+        hashedPassword: bcrypt.hashSync('shark'),
+        firstName: 'Steve',
+        lastName: 'Zissou',
+        profileImageUrl: 'https://ship-camp.s3.us-west-002.backblazeb2.com/hosts/steve-zissou.jpeg',
+        isHost: true
+      },
     ], {});
   },
 

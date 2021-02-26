@@ -1,12 +1,24 @@
 .spot {
   padding: 0 var(--padding-not-home);
-  word-wrap: break-word;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.spot * {
+  /* border: 1px dashed tomato; */
 }
 
 .spot__content {
   width: 100%;
   display: grid;
+  grid-template: auto / 1fr 320px;
+  max-width: var(--narrow-view-max-width);
+}
 
+.spot__details {
+  padding: 30px 30px 0 0;
+}
+
+.spot-raw {
+  overflow: scroll;
 }

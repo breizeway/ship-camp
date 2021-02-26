@@ -1,0 +1,131 @@
+.book-area {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.book-area__form {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: -40px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+  grid-template-areas:
+    "price price"
+    "checkIn checkOut"
+    "guests guests"
+    /* "subtotal subtotal" */
+    "button button";
+}
+
+.book-area__form > div {
+  padding: 10px;
+}
+
+.book-area * {
+  font-size: 15px;
+}
+
+.book-area__form label {
+  font-weight: 500;
+}
+
+.book-area__form > div:nth-child(1) {
+  border-bottom: 1px solid var(--border);
+}
+
+.book-area__form > div:nth-child(2) {
+  border-right: 1px solid var(--border);
+}
+
+.book-area__form > div:nth-child(4) {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.book-area__price {
+  grid-area: price;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.book-area__price > div:nth-child(1) {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.book-area__price > div:nth-child(2) {
+  font-weight: 300;
+  font-size: 13px;
+  color: gray;
+}
+
+.book-area__checkIn {
+  grid-area: checkIn;
+}
+
+.book-area__checkOut {
+  grid-area: checkOut;
+}
+
+.book-area__check {
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-area__check:hover, .book-area__guests:hover {
+  background-color: var(--background-darker);
+  transition-duration: 0.2s;
+}
+
+.book-area__check > div, select {
+  font-weight: 300;
+}
+
+.book-area__date-input {
+  background-color: lightgreen;
+}
+
+.book-area__guests {
+  grid-area: guests;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.book-area__guests > select {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 97%;
+  height: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 7px;
+}
+
+.book-area__subtotal {
+  grid-area: subtotal;
+  display: none;
+}
+
+.book-area__button {
+  grid-area: button;
+}
+
+.book-area__button-button {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}

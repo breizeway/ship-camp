@@ -51,6 +51,22 @@ module.exports = {
         accessTypeId: 5,
         hostId: 6,
       },
+      {
+        name: 'The Belafonte',
+        description: 'A fine boat equipped for documentary and marine biology missions. Boat is available between outings to fund raise for missions. Meet the whole creq, including Steve Zissou himself. Not responsible for any incdents involving Leopard Sharks.',
+        price: 150,
+        checkIn: '15:00',
+        checkOut: '11:00',
+        minStay: 5,
+        bookingPeriod: 2,
+        maxGuests: 4,
+        shelterIsProvided: true,
+        shelterTypeId: 4,
+        cancellationPolicyId: 3,
+        arrivalTypeId: 2,
+        accessTypeId: 1,
+        hostId: 7,
+      },
     ], {});
   },
 

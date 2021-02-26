@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-
-import * as spotsActions from '../../store/spots';
 
 import './SearchForm.css'
 
@@ -68,7 +65,7 @@ const SearchForm = () => {
         </div>
         <div className='search-form__button-div'>
           <button type='submit'>
-            <div className='search-form__button-icon'>
+            <div className='search-form__button-icon submit-button'>
               <i className='fas fa-search' />
             </div>
           </button>
@@ -76,7 +73,7 @@ const SearchForm = () => {
       </form>
       <div
         className='search-form__image'
-        style={{backgroundImage: 'url(https://ship-camp.s3.us-west-002.backblazeb2.com/home-page.jpg)'}}
+        style={{backgroundImage: 'url(https://ship-camp.s3.us-west-002.backblazeb2.com/home-page-med.jpg)'}}
       ></div>
     </div>
   )

@@ -1,8 +1,41 @@
 .spot-name {
   width: 100%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.spot-name div {
+  font-weight: 500;
 }
 
 .spot-name__name {
   width: 100%;
   font-size: 40px;
+}
+
+.spot-name__recommended {
+  display: flex;
+  height: 30px;
+}
+
+.spot-name__recommended-icon {
+  color: var(--theme2);
+  width: 25px;
+  height: 100%;
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.spot-name__recommended-percent {
+  color: var(--theme2);
+  display: flex;
+  align-items: flex-end;
+}
+
+.spot-name__recommended-text {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 4px;
 }
