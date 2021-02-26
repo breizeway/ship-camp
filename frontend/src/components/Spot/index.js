@@ -6,7 +6,7 @@ import './index.css';
 import { getSpot } from '../../store/spots';
 import PhotoCarousel from '../PhotoCarousel';
 
-const Spot = (props) => {
+const Spot = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -15,6 +15,7 @@ const Spot = (props) => {
   }, [])
 
   const spot = useSelector(state => state.spots.spot);
+  // console.log('   :::SPOT.photos:::   ', spot?.Photos);
 
   return (
     <div className='spot'>

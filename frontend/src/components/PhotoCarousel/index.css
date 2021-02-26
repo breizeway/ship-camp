@@ -1,8 +1,9 @@
 .photo-crsl {
   height: 500px;
   display: flex;
-  width: 5000px;
+  width: 100%;
   z-index: 0;
+  position: relative;
 }
 
 .photo-crsl__photo {
@@ -14,6 +15,35 @@
   margin-right: 16px;
 }
 
-.photo-crsl__photo:last-child {
+.photo-crsl__photo:nth-last-child(3) {
   margin-right: 0;
+}
+
+.photo-crsl__button {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--theme2);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.photo-crsl__button:hover {
+  cursor: pointer;
+}
+
+.photo-crsl__left-button {
+  top: 220px;
+  left: 16px;
+  padding-right: 3px;
+}
+
+.photo-crsl__right-button {
+  top: 220px;
+  right: 16px;
+  padding-left: 3px;
 }

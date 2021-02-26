@@ -1,6 +1,7 @@
 :root {
   --theme1: rgb(40, 20, 60);
   --theme2: rgb(134, 102, 187);
+  --theme2-vals: 134, 102, 187;
   --background: rgb(243, 242, 239);
   --background-darker: rgb(235, 234, 229);
   --border: rgb(225, 221, 230);
