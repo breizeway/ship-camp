@@ -13,8 +13,8 @@
   background-repeat: no-repeat;
   background-position: top left;
   width: 50%;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out 1s;
+  /* animation-duration: 0.5s;
+  animation-timing-function: ease-out 1s; */
 }
 
 .photo-crsl > div.photo-crsl__photo:not(:nth-child(1), :nth-child(2)) {
@@ -23,17 +23,12 @@
 
 .photo-crsl > div.photo-crsl__photo:nth-child(1) {
   margin-right: 8px;
-  animation-name: slideFromRight1;
+  /* animation-name: slideFromRight1; */
 }
 
 .photo-crsl > div.photo-crsl__photo:nth-child(2) {
   margin-left: 8px;
-  animation-name: slideFromRight2;
-}
-
-.photo-crsl > div.photo-crsl__photo:nth-child(3) {
-  margin-left: 8px;
-  animation-name: slideFromRight2;
+  /* animation-name: slideFromRight2; */
 }
 
 .photo-crsl__button {

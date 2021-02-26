@@ -31,7 +31,7 @@ function App() {
             padding: !isHome && '0 30px'
           }}
         >
-          <Navigation isLoaded={isLoaded} isHome={isHome}/>
+          <Navigation isLoaded={isLoaded}/>
         </div>
       </div>
       <div className='main-view-wrapper'>

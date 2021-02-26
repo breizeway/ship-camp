@@ -1,4 +1,12 @@
 .spot {
   padding: 0 var(--padding-not-home);
   word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+}
+
+.spot__content {
+  width: 100%;
+  display: grid;
+
 }
