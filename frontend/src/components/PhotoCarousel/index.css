@@ -1,0 +1,19 @@
+.photo-crsl {
+  height: 500px;
+  display: flex;
+  width: 5000px;
+  z-index: 0;
+}
+
+.photo-crsl__photo {
+  width: 600px;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin-right: 16px;
+}
+
+.photo-crsl__photo:last-child {
+  margin-right: 0;
+}

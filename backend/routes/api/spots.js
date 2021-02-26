@@ -43,10 +43,7 @@ router.get(
   '/:id',
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const spot = await Spot.findAll({
-      where: {
-        id
-      },
+    const spot = await Spot.findByPk(id, {
       include: [
         {model: ShelterType},
         {model: CancellationPolicy},
@@ -61,7 +58,7 @@ router.get(
         {model: Photo},
         {model: Amenity},
       ]
-      })[0]
+    })
     return res.json({spot});
   })
 )

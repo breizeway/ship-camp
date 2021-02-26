@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0;
   background-color: var(--background);
@@ -42,7 +42,7 @@ img.x-form-date-trigger {
 }
 
 #root {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: grid;
   grid-template: 70px auto / auto ;
@@ -50,7 +50,7 @@ img.x-form-date-trigger {
 
 .main-nav-wrapper,
 .main-view-wrapper {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -58,7 +58,7 @@ img.x-form-date-trigger {
 
 .main-nav,
 .main-view {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   max-width: 1280px;
   padding: 0 72px;

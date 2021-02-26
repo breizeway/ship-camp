@@ -50,7 +50,7 @@ function App() {
               <Route exact path='/spots'>
                 <Spots />
               </Route>
-              <Route exact path='/spots/:id'>
+              <Route path='/spots/:id'>
                 <Spot />
               </Route>
               <Route path='/login'>

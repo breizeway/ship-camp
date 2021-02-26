@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import './index.css';
-import { getSpots } from '../../store/spots';
+import { getSearchedSpots } from '../../store/spots';
 import SpotCard from '../SpotCard';
 
 const Spots = () => {
@@ -12,7 +12,7 @@ const Spots = () => {
   const queryString = useLocation().search;
 
   useEffect(() => {
-    dispatch(getSpots(queryString));
+    dispatch(getSearchedSpots(queryString));
   }, [])
 
   const spots = useSelector(state => state.spots.searchedSpots);

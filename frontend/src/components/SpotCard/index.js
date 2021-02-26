@@ -8,7 +8,7 @@ const SpotCard = ({ spot }) => {
     <div className='spot-card'>
       <div className='spot-card__main'>
         <Link
-          to={`spots/${spot.id}`}
+          to={`/spots/${spot.id}`}
           className='spot-card__link'
         >
           <div
