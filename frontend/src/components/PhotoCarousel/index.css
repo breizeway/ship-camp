@@ -1,35 +1,59 @@
 .photo-crsl {
   height: 500px;
-  display: flex;
+  display: grid;
+  grid-template: 100% / 100px 16px 1fr 16px 100px;
+  grid-template-areas:
+    "first . second . third";
   width: 100%;
-  z-index: 0;
+  max-width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .photo-crsl__photo {
-  width: 600px;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top left;
-  margin-right: 16px;
 }
 
-.photo-crsl__photo:nth-last-child(3) {
-  margin-right: 0;
+.photo-crsl > div.photo-crsl__photo:not(:nth-child(1), :nth-child(2), :nth-child(3)) {
+  display: none;
 }
+
+.photo-crsl > div.photo-crsl__photo:nth-child(1) {
+  grid-area: first;
+  background-position: top right;
+  width: 100%;
+}
+
+.photo-crsl > div.photo-crsl__photo:nth-child(2) {
+  grid-area: second;
+  background-position: top left;
+  width: 100%;
+}
+
+.photo-crsl > div.photo-crsl__photo:nth-child(3) {
+  grid-area: third;
+  background-position: top left;
+  width: 100%;
+}
+
+/* .photo-crsl > div:nth-child(3) {
+  margin-right: 0;
+} */
 
 .photo-crsl__button {
   height: 60px;
   width: 60px;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   color: var(--background);
   font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
+  z-index: 4;
 }
 
 .photo-crsl__button:hover {

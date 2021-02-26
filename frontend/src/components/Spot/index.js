@@ -15,7 +15,6 @@ const Spot = () => {
   }, [])
 
   const spot = useSelector(state => state.spots.spot);
-  // console.log('   :::SPOT.photos:::   ', spot?.Photos);
 
   return (
     <div className='spot'>

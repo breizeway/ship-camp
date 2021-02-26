@@ -1,3 +1,4 @@
 .spot {
   padding: 0 var(--padding-not-home);
+  word-wrap: break-word;
 }
