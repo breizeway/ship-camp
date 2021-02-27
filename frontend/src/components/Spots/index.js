@@ -22,7 +22,7 @@ const Spots = () => {
 
   return (
     <div className='spots'>
-      <div className='spot__cards'>
+      <div className='spots__cards-half'>
         {
           spots &&
           spots.map(spot => (
@@ -30,7 +30,9 @@ const Spots = () => {
           ))
         }
       </div>
-      <Map />
+      <div className='spots__map-half'>
+        <Map />
+      </div>
     </div>
   )
 }

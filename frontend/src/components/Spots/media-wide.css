@@ -1,17 +1,35 @@
 @media screen and (min-width: 1200px) {
-  .spot__cards {
+  .spots__cards-half {
     grid-template: repeat(10, auto) / repeat(2, 1fr);
+  }
+
+  .spot-card:nth-child(1),
+  .spot-card:nth-child(2) {
+    padding-top: 0;
   }
 }
 
 @media screen and (min-width: 1800px) {
-  .spot__cards {
+  .spots__cards-half {
     grid-template: repeat(10, auto) / repeat(3, 1fr);
+  }
+
+  .spot-card:nth-child(1),
+  .spot-card:nth-child(2),
+  .spot-card:nth-child(3) {
+    padding-top: 0;
   }
 }
 
 @media screen and (min-width: 2400px) {
-  .spot__cards {
+  .spots__cards-half {
     grid-template: repeat(10, auto) /  repeat(4, 1fr);
+  }
+
+  .spot-card:nth-child(1),
+  .spot-card:nth-child(2),
+  .spot-card:nth-child(3),
+  .spot-card:nth-child(4) {
+    padding-top: 0;
   }
 }

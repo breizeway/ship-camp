@@ -5,7 +5,18 @@
   grid-template: auto / 1fr 1fr;
 }
 
-.spot__cards {
+.spots__cards-half {
   display: grid;
   grid-template: repeat(10, auto) / 1fr;
+}
+
+.spots__map-half {
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--padding-not-home) var(--padding-not-home);;
+  display: grid;
+}
+
+.spot-card:nth-child(1) {
+  padding-top: 0;
 }
