@@ -15,7 +15,7 @@ const PhotoCarousel = ({ photos, setPhotos }) => {
   }
 
   return (
-    <div className='photo-crsl'>
+    <div className='photo-crsl photo-crsl-media'>
       {photos && photos.map(photo => (
         <div
           key={photo.id}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import './index.css';
+import './index-media.css'
 import { getSpot } from '../../store/spots';
 import PhotoCarousel from '../PhotoCarousel';
 import SpotName from './SpotName';

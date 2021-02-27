@@ -1,0 +1,11 @@
+@media screen and (max-width: 1200px) {
+  .photo-crsl > div.photo-crsl__photo:not(:nth-child(1)) {
+    display: none;
+    width: 20px;
+  }
+
+  .photo-crsl.photo-crsl-media > div.photo-crsl__photo:nth-child(1) {
+    width: 100%;
+    margin-right: 0;
+  }
+}

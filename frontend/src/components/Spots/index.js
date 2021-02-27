@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import './index.css';
-import './media-wide.css';
+import './index-media.css';
 
 import { getSearchedSpots } from '../../store/spots';
 import SpotCard from '../SpotCard';
