@@ -28,7 +28,7 @@ const Spot = () => {
       <div className='spot__content'>
         <div className='spot__details'>
           <SpotName name={spot.name}/>
-          <div>spot host comp goes here</div>
+          <div className='spot__description'>{spot.description}</div>
           <div>spot desc comp goes here</div>
           <div>
             spot features goes here 1
