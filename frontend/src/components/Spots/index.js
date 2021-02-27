@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import './index.css';
+import './media-wide.css';
+
 import { getSearchedSpots } from '../../store/spots';
 import SpotCard from '../SpotCard';
+import Map from '../Map';
 
 const Spots = () => {
   const dispatch = useDispatch();
@@ -27,7 +30,7 @@ const Spots = () => {
           ))
         }
       </div>
-      <div className='spots__map'></div>
+      <Map />
     </div>
   )
 }

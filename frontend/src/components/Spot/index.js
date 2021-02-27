@@ -6,7 +6,7 @@ import './index.css';
 import { getSpot } from '../../store/spots';
 import PhotoCarousel from '../PhotoCarousel';
 import SpotName from './SpotName';
-import BookArea from './BookArea';
+import BookForm from './BookForm';
 
 const Spot = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const Spot = () => {
             spot features goes here 3
           </div>
         </div>
-        <BookArea
+        <BookForm
           price={spot.price}
           checkIn={spot.checkIn}
           checkOut={spot.checkOut}

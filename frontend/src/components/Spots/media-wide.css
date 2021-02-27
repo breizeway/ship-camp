@@ -1,0 +1,17 @@
+@media screen and (min-width: 1200px) {
+  .spot__cards {
+    grid-template: repeat(10, auto) / repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .spot__cards {
+    grid-template: repeat(10, auto) / repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 2400px) {
+  .spot__cards {
+    grid-template: repeat(10, auto) /  repeat(4, 1fr);
+  }
+}

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Switch, Route, useLocation } from 'react-router-dom';
 
 import Navigation from '../src/components/Navigation';
@@ -8,7 +8,8 @@ import Spots from '../src/components/Spots';
 import Spot from '../src/components/Spot';
 import LoginFormPage from '../src/components/LoginFormPage';
 import SignupFormPage from '../src/components/SignupFormPage';
-import * as sessionActions from "./store/session";
+import * as sessionActions from './store/session';
+import * as apiKeyActions from './store/apiKeys';
 
 function App() {
   const isHome = useLocation().pathname === '/';
@@ -16,9 +17,10 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    dispatch(sessionActions.restoreUser())
-      .then(() => setIsLoaded(true))
+  useEffect(async () => {
+    await dispatch(sessionActions.restoreUser())
+    await dispatch(apiKeyActions.getGoogleMaps())
+    setIsLoaded(true)
   }, [dispatch]);
 
   return isLoaded && (
