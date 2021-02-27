@@ -13,7 +13,7 @@
 .spots__map-half {
   width: 100%;
   height: 100%;
-  padding: 0 var(--padding-not-home) var(--padding-not-home);;
+  padding: 0 var(--padding-not-home) var(--padding-not-home) 0;
   display: grid;
 }
 

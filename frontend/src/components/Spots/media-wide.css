@@ -1,3 +1,13 @@
+@media screen and (max-width: 600px) {
+  .spots {
+    grid-template: auto / 1fr;
+  }
+
+  .spots__map-half {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .spots__cards-half {
     grid-template: repeat(10, auto) / repeat(2, 1fr);
