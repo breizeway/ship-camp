@@ -1,0 +1,29 @@
+.spot-host {
+  display: grid;
+  grid-template: 1fr / 120px 90px;
+  grid-template-areas:
+    "pic text";
+  }
+
+  .spot-host__photo {
+    width: 92px;
+    height: 92px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 46px;
+  }
+
+  .spot-host__text{
+    width: 92px;
+    height: 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .spot-host__text-host-by {
+    font-size: 12px;
+    font-weight: 600;
+  }

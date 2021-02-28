@@ -30,7 +30,8 @@ function App() {
           className='main-nav'
           style={{
             maxWidth: !isHome && '100%',
-            padding: !isHome && '0 30px'
+            padding: !isHome && '0 30px',
+            backgroundColor: !isHome && 'white',
           }}
         >
           <Navigation isLoaded={isLoaded}/>
@@ -41,7 +42,8 @@ function App() {
           className='main-view'
           style={{
             maxWidth: !isHome && '100%',
-            padding: !isHome && '0'
+            padding: !isHome && '0',
+            backgroundColor: !isHome && 'white',
           }}
         >
           {isLoaded && (
