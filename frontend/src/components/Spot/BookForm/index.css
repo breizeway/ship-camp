@@ -83,10 +83,6 @@
   background-color: inherit;
 }
 
-.book-form__check-date-picker:hover {
-  border: 1px solid var(--border)
-}
-
 .book-form__check {
   font-weight: 300;
   display: flex;
