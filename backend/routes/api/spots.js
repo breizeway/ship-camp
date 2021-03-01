@@ -57,7 +57,10 @@ router.get(
             exclude: ['hashedPassword', 'email', 'username', 'isHost']
           }
         },
-        {model: Photo},
+        {
+          model: Photo,
+          order: ['id']
+        },
         {model: Amenity},
         {
           model: Review,
