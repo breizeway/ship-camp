@@ -12,6 +12,7 @@ import SpotDescription from './SpotDescription';
 import SpotHost from './SpotHost';
 import SpotFeatureCard from './SpotFeatureCard';
 import SpotBookDetails from './SpotBookDetails';
+import SpotReviews from './SpotReviews';
 
 const Spot = () => {
   const dispatch = useDispatch();
@@ -66,6 +67,9 @@ const Spot = () => {
             minStay={spot.minStay}
             bookingPeriod={spot.bookingPeriod}
           />
+          <SpotReviews
+            reviews = {spot.Reviews}
+          />
         </div>
         <BookForm
           price={spot.price}
@@ -73,7 +77,7 @@ const Spot = () => {
           checkOut={spot.checkOut}
           maxGuests={spot.maxGuests}
         />
-        {/* <div className='spot-raw'>{JSON.stringify (spot)}</div> */}
+        <div className='spot-raw'>{JSON.stringify (spot)}</div>
       </div>
     </div>
   )

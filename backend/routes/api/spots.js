@@ -10,7 +10,8 @@ const {
   AccessType,
   User,
   Photo,
-  Amenity
+  Amenity,
+  Review
 } = require('../../db/models');
 const Op = Sequelize.Op;
 
@@ -57,6 +58,7 @@ router.get(
         },
         {model: Photo},
         {model: Amenity},
+        {model: Review},
       ]
     })
     return res.json({spot});

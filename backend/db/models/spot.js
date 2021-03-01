@@ -106,6 +106,7 @@ module.exports = (sequelize, DataTypes) => {
     Spot.belongsTo(models.AccessType, {foreignKey: 'accessTypeId'});
     Spot.belongsTo(models.User, {foreignKey: 'hostId', as: 'Host'});
     Spot.hasMany(models.Photo, {foreignKey: 'spotId'})
+    Spot.hasMany(models.Review, {foreignKey: 'spotId'})
     //Spot.hasMany(models.SpotAmenity, {foreignKey: 'spotId'})
     const columnMapping = {
       through: 'SpotAmenity',
