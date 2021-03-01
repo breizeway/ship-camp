@@ -22,7 +22,6 @@
   background-color: white;
   border-radius: 2px;
   z-index: 999;
-
 }
 
 .profile-dropdown__triangle-gray {
@@ -80,6 +79,15 @@
   background-position: center;
 }
 
-.navigation__icon-inner-color {
+.navigation__icon-inner-color.navigation__icon-inner-color {
   background-image: url('../../assets/images/logo-color-bright.png');
+}
+
+.profile-dropdown.profile-dropdown a {
+  color: black;
+  text-decoration: none;
+}
+
+.profile-dropdown.profile-dropdown a:hover {
+  text-decoration: underline;
 }

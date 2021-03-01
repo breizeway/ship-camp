@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom'
 
@@ -26,7 +26,7 @@ function ProfileButton({ user }) {
 
     document.addEventListener('click', closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
+    return () => document.removeEventListener('click', closeMenu);
   }, [showMenu]);
 
   const logout = e => {
@@ -46,9 +46,9 @@ function ProfileButton({ user }) {
         ></div>
       </div>
       {showMenu && (
-        <div className="profile-dropdown">
-          <div class="profile-dropdown__triangle-gray">
-            <div class="profile-dropdown__triangle-white" />
+        <div className='profile-dropdown' style={{width: !user && '150px'}}>
+          <div class='profile-dropdown__triangle-gray'>
+            <div class='profile-dropdown__triangle-white' />
           </div>
           {user && (
             <>

@@ -11,21 +11,37 @@ const BookForm = ({ price, checkIn, checkOut, maxGuests }) => {
   })(maxGuests);
 
   const [numGuests, setNumGuests] = useState(1);
+  const [checkInDate, setCheckInDate] = useState('')
+  const [checkOutDate, setCheckOutDate] = useState('')
+
+  const submitHandler = e => {
+    e.preventDefault();
+  }
 
   return (
     <div className='book-form'>
-      <form className='book-form__form'>
+      <form className='book-form__form' onSubmit={submitHandler}>
         <div className='book-form__price'>
           <div>${price}</div>
           <div>per night ({maxGuests} guests)</div>
         </div>
         <div className='book-form__checkin book-form__check'>
           <label>Check in</label>
-          <div>Select date</div>
+          <input
+            className='book-form__check-date-picker'
+            type='date'
+            value={checkInDate}
+            onChange={e => setCheckInDate(e.target.value)}
+          />
         </div>
         <div className='book-form__checkout book-form__check'>
           <label>Check out</label>
-          <div>Select date</div>
+          <input
+            className='book-form__check-date-picker'
+            type='date'
+            value={checkOutDate}
+            onChange={e => setCheckOutDate(e.target.value)}
+          />
         </div>
         <div className='book-form__guests'>
           <label>Guests</label>
