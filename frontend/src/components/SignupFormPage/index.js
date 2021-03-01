@@ -42,75 +42,78 @@ const SignupFormPage = () => {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
-      <div>
-        {validationErrors && validationErrors.map((error, idx) => (
-          <p key={idx}>{error}</p>
-        ))}
+    <div className='credential-page'>
+      <div className='credential-page__content'>
+        <div className='credential-page__content-welcome'>Join Shipcamp</div>
+        <div className='credential-page__content-phrase'>Discover the best camping (on ships) near you.</div>
+        <div>
+          {validationErrors && validationErrors.map((error, idx) => (
+            <p key={idx}>{error}</p>
+          ))}
+        </div>
+        <form className='credential-form' onSubmit={submitHandler}>
+          <div>
+            <input
+              type='text'
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder='Email'
+              required
+            ></input>
+          </div>
+          <div>
+            <input
+              type='text'
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+              placeholder='Username'
+              required
+            ></input>
+          </div>
+          <div>
+            <input
+              type='text'
+              value={firstName}
+              onChange={e => setFirstName(e.target.value)}
+              placeholder='First Name'
+              required
+            ></input>
+          </div>
+          <div>
+            <input
+              type='text'
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
+              placeholder='Last Name'
+              required
+            ></input>
+          </div>
+          <div className='credential-form__upload-div'>
+            <label>
+              <input type="file" onChange={updateFile}></input>
+            </label>
+          </div>
+          <div>
+            <input
+              type='password'
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              placeholder='Password'
+              required
+            ></input>
+          </div>
+          <div>
+            <input
+              type='password'
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
+              placeholder='Confirm Password'
+              required
+            ></input>
+          </div>
+          <button type='submit' className='submit-button'>Sign Up</button>
+        </form>
       </div>
-      <form className='credential-form' onSubmit={submitHandler}>
-        <div>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='text'
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor='username'>Username</label>
-          <input
-            type='text'
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor='firstName'>First Name</label>
-          <input
-            type='text'
-            value={firstName}
-            onChange={e => setFirstName(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor='lastName'>Last Name</label>
-          <input
-            type='text'
-            value={lastName}
-            onChange={e => setLastName(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label>
-            <input type="file" onChange={updateFile} />
-          </label>
-        </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor='confirmPassword'>Confirm Password</label>
-          <input
-            type='password'
-            value={confirmPassword}
-            onChange={e => setConfirmPassword(e.target.value)}
-            required
-          ></input>
-        </div>
-        <button type='submit'>Sign Up</button>
-      </form>
     </div>
   )
 }

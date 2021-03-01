@@ -20,7 +20,7 @@ const SpotReview = ({ review }) => {
               {review.recommended === true ? <i className='fas fa-thumbs-up' style={{paddingBottom: '1px'}}/> : <i className='fas fa-thumbs-down' style={{paddingTop: '2px'}}/>}
             </div>
             <div className='spot-review__content-about-name'>{`${review.Reviewer.firstName} ${review.Reviewer.lastName[0]}.`}</div>
-            <div className='spot-review__content-about-text'>&nbsp;recommends this listing.</div>
+            <div className='spot-review__content-about-text'>&nbsp;{review.recommended === true ? 'recommends this listing.' : 'does not reccommend this listing.'}</div>
           </div>
           <div className='spot-review__content-about-date'>{reviewDate}</div>
         </div>

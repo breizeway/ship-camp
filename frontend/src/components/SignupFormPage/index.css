@@ -1,0 +1,77 @@
+.credential-page {
+  width: 100%;
+  height: 100%;
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.credential-page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.credential-page__content > div,
+.credential-page__content > form {
+  width: 100%;
+}
+
+.credential-page__content-welcome {
+  font-size: 26px;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+.credential-page__content-phrase {
+  font-size: 16px;
+  color: gray;
+  padding-bottom: 24px;
+}
+
+.credential-page input {
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  width: 100%;
+  padding: 20px 10px;
+  margin-bottom: 8px;
+}
+
+.credential-page input::placeholder {
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* .credential-page label {
+  border: 1px solid black;
+} */
+
+.credential-page button {
+  height: 50px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+
+.demo-button {
+  margin-top: 8px;
+  background-color: white;
+  color: var(--theme2);
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--theme2);
+}
+
+.demo-button:hover {
+  cursor: pointer;
+}

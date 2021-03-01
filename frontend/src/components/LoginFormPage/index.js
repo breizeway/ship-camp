@@ -31,39 +31,42 @@ const LoginFormPage = () => {
   const demoUser = () => dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }));
 
   return (
-    <div>
-      <h1>Login</h1>
-      <div>
-        {validationErrors && validationErrors.map((error, idx) => (
-          <p key={idx}>{error}</p>
-        ))}
+    <div className='credential-page'>
+      <div className='credential-page__content'>
+        <div className='credential-page__content-welcome'>Welcome back!</div>
+        <div className='credential-page__content-phrase'>Let's get you back on a ship.</div>
+        <div>
+          {validationErrors && validationErrors.map((error, idx) => (
+            <p key={idx}>{error}</p>
+          ))}
+        </div>
+        <form className='credential-form' onSubmit={submitHandler}>
+          <div>
+            <input
+              type='text'
+              value={credential}
+              onChange={e => setCredential(e.target.value)}
+              placeholder='Email or username...'
+              required
+            ></input>
+          </div>
+          <div>
+            <input
+              type='password'
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              placeholder='Password...'
+              required
+            ></input>
+          </div>
+          <div>
+            <button type='submit' className='submit-button'>Log In</button>
+          </div>
+          <div>
+            <button onClick={demoUser} className='demo-button'>Demo User</button>
+          </div>
+        </form>
       </div>
-      <form className='credential-form' onSubmit={submitHandler}>
-        <div>
-          <label htmlFor='credential'>Username or Email</label>
-          <input
-            type='text'
-            value={credential}
-            onChange={e => setCredential(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          ></input>
-        </div>
-        <div>
-          <button type='submit'>Log In</button>
-        </div>
-        <div>
-          <button onClick={demoUser}>Demo User</button>
-        </div>
-      </form>
     </div>
   )
 }

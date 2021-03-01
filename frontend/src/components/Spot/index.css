@@ -5,9 +5,6 @@
   align-items: center;
   color: var(--spot-text-color);
 }
-.spot * {
-  /* border: 1px dashed tomato; */
-}
 
 .spot__content {
   width: 100%;
