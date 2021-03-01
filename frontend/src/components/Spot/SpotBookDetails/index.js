@@ -29,7 +29,7 @@ const SpotBookDetails = ({
               Check in:&nbsp;
             </div>
             <div className='spot-book-details__details-item-text'>
-              {` ${checkInText}`}
+              {`After ${checkInText}`}
             </div>
           </div>
           <div className='spot-book-details__details-item'>
@@ -37,7 +37,7 @@ const SpotBookDetails = ({
               Check out:&nbsp;
             </div>
             <div className='spot-book-details__details-item-text'>
-              {` ${checkOutText}`}
+              {`Before ${checkOutText}`}
             </div>
           </div>
           <div className='spot-book-details__details-item'>

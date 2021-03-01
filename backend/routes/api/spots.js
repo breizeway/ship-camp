@@ -50,7 +50,8 @@ router.get(
         {model: CancellationPolicy},
         {model: ArrivalType},
         {model: AccessType},
-        {model: User,
+        {
+          model: User,
           as: 'Host',
           attributes: {
             exclude: ['hashedPassword', 'email', 'username', 'isHost']
@@ -58,7 +59,16 @@ router.get(
         },
         {model: Photo},
         {model: Amenity},
-        {model: Review},
+        {
+          model: Review,
+          include: {
+            model: User,
+            as: 'Reviewer',
+            attributes: {
+            exclude: ['hashedPassword', 'email', 'username', 'isHost']
+          }
+          }
+        },
       ]
     })
     return res.json({spot});

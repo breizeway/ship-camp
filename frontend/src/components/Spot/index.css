@@ -34,3 +34,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.spot-reviews {
+  padding: 20px 0;
+}

@@ -15,6 +15,9 @@ const Map = () => {
 
   const onLoad = useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
+    bounds.Pa.g = 300;
+    bounds.Pa.i = -50;
+    bounds.Va.g = 50;
     map.fitBounds(bounds);
     setMap(map)
   }, [])
@@ -26,7 +29,7 @@ const Map = () => {
   return isLoaded && (
     <GoogleMap
       // mapContainerStyle={containerStyle}
-      // center={center}
+      // center={-34, 100}
       zoom={3}
       onLoad={onLoad}
       onUnmount={onUnmount}

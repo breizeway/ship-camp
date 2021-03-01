@@ -24,10 +24,10 @@ const PhotoCarousel = ({ photos, setPhotos }) => {
         ></div>
       ))}
       <div className='photo-crsl__button photo-crsl__left-button' onClick={rotateLeft}>
-        <i class="fas fa-chevron-left"></i>
+        <i className="fas fa-chevron-left"></i>
       </div>
       <div className='photo-crsl__button photo-crsl__right-button' onClick={rotateRight}>
-        <i class="fas fa-chevron-right"></i>
+        <i className="fas fa-chevron-right"></i>
       </div>
     </div>
   )

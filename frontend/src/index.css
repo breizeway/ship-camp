@@ -39,11 +39,6 @@ h1, h2 {
   color: var(--theme1);
 }
 
-input, select, option {
-  font-size: 20px;
-  /* color: rgb(60, 60, 60) */
-}
-
 img.x-form-date-trigger {
   display: none;
 }

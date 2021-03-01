@@ -1,0 +1,65 @@
+.spot-review {
+  display: flex;
+}
+
+.spot-review__profile-image-container {
+  padding: 15px 15px 0 0;
+}
+
+.spot-review__profile-image {
+  width: 76px;
+  height: 76px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 46px;
+}
+
+.spot-review__content {
+  border-bottom: 1px solid var(--border);
+  flex-grow: 1;
+  padding: 45px 0 30px;
+}
+
+.spot-review__content-about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spot-review__content-about-host {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.spot-review__content-about-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: var(--theme2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  padding-right: 1px;
+}
+
+.spot-review__content-about-name {
+  padding: 3px 0 0 3px;
+  font-weight: 500;
+}
+
+.spot-review__content-about-text {
+  padding-top: 3px;
+}
+
+.spot-review__content-about-date {
+  color: gray;
+}
+
+.spot-review__content-review {
+  width: 100%;
+  padding-top: 15px;
+}

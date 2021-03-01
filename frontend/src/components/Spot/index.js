@@ -77,7 +77,6 @@ const Spot = () => {
           checkOut={spot.checkOut}
           maxGuests={spot.maxGuests}
         />
-        <div className='spot-raw'>{JSON.stringify (spot)}</div>
       </div>
     </div>
   )

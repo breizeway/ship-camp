@@ -1,0 +1,16 @@
+.spot-reviews__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spot-reviews__num {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.spot-reveiws__sort select {
+  padding: 8px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}

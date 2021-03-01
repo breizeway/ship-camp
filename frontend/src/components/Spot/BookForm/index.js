@@ -33,8 +33,8 @@ const BookForm = ({ price, checkIn, checkOut, maxGuests }) => {
             value={numGuests}
             onChange={e => setNumGuests(e.target.value)}
           >
-            {guestOptions.map(num => (
-              <option value={num}>{num === 1 ? `${num} guest` : `${num} guests`}</option>
+            {guestOptions.map((num, index) => (
+              <option value={num} key={index}>{num === 1 ? `${num} guest` : `${num} guests`}</option>
             ))}
           </select>
         </div>

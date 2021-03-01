@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 import * as sessionActions from '../../store/session';
 import './ProfileButton.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
+  const isHome = useLocation().pathname === '/';
+
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
@@ -34,11 +36,20 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <div className='navigation__icon' onClick={openMenu}>
-        <div className='navigation__icon-inner'></div>
+      <div
+        className='navigation__icon'
+        onClick={openMenu}
+        style={{backgroundColor: isHome ? 'white' : 'rgb(243, 242, 239)'}}
+      >
+        <div
+          className={`navigation__icon-inner ${isHome ? '' : 'navigation__icon-inner-color'}`}
+        ></div>
       </div>
       {showMenu && (
         <div className="profile-dropdown">
+          <div class="profile-dropdown__triangle-gray">
+            <div class="profile-dropdown__triangle-white" />
+          </div>
           {user && (
             <>
               <div>

@@ -1,6 +1,7 @@
 'use strict';
 const faker = require('faker');
-const bcrypt = require('bcryptjs');
+
+const reviewText = require('../seed-data/review-text')
 
 const randBool = percentage => {
   const randNum = Math.floor(Math.random() * 100);
@@ -15,22 +16,23 @@ const usersMin = 8;
 const usersMax = 50;
 
 const fakeReviews = (numReviews) => {
-  const usersArray = [];
+  const reviewsArray = [];
 
   for (let i = 1; i <= numReviews; i++) {
-    const userObj = {};
-    userObj.text = faker.lorem.paragraph();
-    userObj.recommended = randBool(90);
-    userObj.spotId = faker.random.number({min: 1, max: spotsMax})
-    userObj.userId = faker.random.number({min: usersMin, max: usersMax})
-    usersArray.push(userObj);
+    const reviewObj = {};
+    reviewObj.text = reviewText[Math.floor(Math.random() * reviewText.length)];
+    reviewObj.recommended = randBool(90);
+    reviewObj.spotId = faker.random.number({min: 1, max: spotsMax});
+    reviewObj.userId = faker.random.number({min: usersMin, max: usersMax});
+    reviewObj.createdAt = new Date(faker.date.past(5));
+    reviewsArray.push(reviewObj);
   }
-  return usersArray;
+  return reviewsArray;
 }
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Reviews', fakeReviews(50), {});
+    return queryInterface.bulkInsert('Reviews', fakeReviews(30), {});
   },
 
   down: (queryInterface, Sequelize) => {
