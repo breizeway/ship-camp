@@ -32,7 +32,7 @@ const Spot = () => {
       <PhotoCarousel photos={photos} setPhotos={setPhotos} />
       <div className='spot__content'>
         <div className='spot__details'>
-          <SpotName name={spot.name}/>
+          <SpotName name={spot.name} reviews={spot.Reviews}/>
           <div className='spot__host-desc'>
             <SpotHost
               firstName={spot.Host.firstName}

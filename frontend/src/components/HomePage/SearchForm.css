@@ -44,7 +44,6 @@
 .search-form__inputs-div > div {
   height: 70px;
   display: flex;
-  flex-grow: 9;
   flex-direction: column;
   justify-content: flex-end;
   padding-right: 16px;

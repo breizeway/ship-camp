@@ -34,6 +34,7 @@ router.get(
           }
         },
         {model: Photo},
+        {model: Review},
       ]
       })
     return res.json({spots});

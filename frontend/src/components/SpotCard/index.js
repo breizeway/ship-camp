@@ -22,7 +22,7 @@ const SpotCard = ({ spot }) => {
               <div className='spot-card__name'>{spot.name}</div>
             </div>
             <div className='spot-card__reviews-div'>
-              <div className='spot-card__reviews'>10 Reviews</div>
+              <div className='spot-card__reviews'>{spot.Reviews.length} Reviews</div>
             </div>
             <div className='spot-card__price-host-div'>
               <div className='spot-card__host'>
