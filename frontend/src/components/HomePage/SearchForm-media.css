@@ -1,0 +1,18 @@
+@media screen and (max-width: 1150px) {
+  .search-form__inputs-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-form__inputs-div > div {
+    width: 100%;
+  }
+
+  .search-form__form {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    align-content: flex-end;
+  }
+}

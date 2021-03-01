@@ -13,10 +13,7 @@
 }
 
 .search-form__form {
-  display: grid;
-  grid-template: auto / auto 48px;
-  grid-template-areas:
-    "inputs button";
+  display: flex;
   height: 120px;
   width: 94%;
   padding: 0 48px;
@@ -34,7 +31,6 @@
 }
 
 .search-form__inputs-div {
-  grid-area: inputs;
   width: 100%;
   height: 100%;
   display: flex;
@@ -49,12 +45,16 @@
   padding-right: 16px;
 }
 
+.search-form__inputs-div > div:nth-child(1) {
+  flex-grow: 2;
+}
+
 .search-form__inputs-div > div:nth-child(2) {
   flex-grow: 1;
 }
 
 .search-form__inputs-div > div:nth-child(3) {
-  flex-grow: 4;
+  flex-grow: 1;
 }
 
 .search-form__inputs-div label {

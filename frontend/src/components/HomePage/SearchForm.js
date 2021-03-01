@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import './SearchForm.css'
+import './SearchForm-media.css'
 
 const SearchForm = () => {
   const history = useHistory();
