@@ -22,13 +22,11 @@ module.exports = {
       },
       checkIn: {
         allowNull: false,
-        type: Sequelize.TIME,
-        defaultValue: '15:00'
+        type: Sequelize.INTEGER,
       },
       checkOut: {
         allowNull: false,
-        type: Sequelize.TIME,
-        defaultValue: '11:00'
+        type: Sequelize.INTEGER,
       },
       minStay: {
         allowNull: false,

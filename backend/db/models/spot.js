@@ -20,15 +20,29 @@ module.exports = (sequelize, DataTypes) => {
         max: 10000
       },
     },
-    checkIn: DataTypes.TIME,
-    checkOut: DataTypes.TIME,
+    checkIn: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 0,
+        max: 23
+      },
+    },
+    checkOut: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        min: 0,
+        max: 23
+      },
+    },
     minStay: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         min: 1,
-        max: 10
-      },
+        max: 12
+      }
     },
     bookingPeriod: {
       type: DataTypes.INTEGER,

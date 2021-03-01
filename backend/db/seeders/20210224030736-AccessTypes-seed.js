@@ -16,7 +16,7 @@ module.exports = {
         description: 'Shuttle'
       },
       {
-        description: 'Swim'
+        description: 'Swimming'
       },
     ], {});
   },

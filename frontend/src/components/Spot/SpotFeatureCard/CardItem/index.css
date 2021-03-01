@@ -1,0 +1,14 @@
+.card-item {
+  padding-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-item__icon {
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  color: var(--theme2);
+}

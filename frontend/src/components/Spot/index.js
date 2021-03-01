@@ -11,6 +11,7 @@ import SpotName from './SpotName';
 import SpotDescription from './SpotDescription';
 import SpotHost from './SpotHost';
 import SpotFeatureCard from './SpotFeatureCard';
+import SpotBookDetails from './SpotBookDetails';
 
 const Spot = () => {
   const dispatch = useDispatch();
@@ -40,10 +41,31 @@ const Spot = () => {
             <SpotDescription description={spot.description} />
           </div>
           <div className='spot__feature-cards'>
-            <SpotFeatureCard type={'Campsite area'}/>
-            <SpotFeatureCard type={'Essentials'} />
-            <SpotFeatureCard type={'Ammenities'} />
+            <SpotFeatureCard
+              type={'Campsite area'}
+              items={[
+                {id: 1, icon: 'shelter', beforeText: spot.shelterIsProvided === true ? 'Shelter: ' : 'Shelter: Bring your own ', desc: spot.ShelterType.description, available: null, afterText: ''},
+                {id: 2, icon: 'access', beforeText: 'Access: ', desc: spot.AccessType.description, available: null, afterText: ' required'},
+                {id: 3, icon: 'guests', beforeText: 'Up to ', desc: spot.maxGuests, available: null, afterText: ' guests allowed'},
+              ]}
+            />
+            <SpotFeatureCard
+              type={'Ammenities'}
+              items={
+                spot.Amenities.map(amenity => (
+                  {id: amenity.id, icon: amenity.description, beforeText: '', desc: amenity.description, available: amenity.SpotAmenity.available, afterText: ''}
+                ))
+              }
+            />
           </div>
+          <SpotBookDetails
+            checkIn={spot.checkIn}
+            checkOut={spot.checkOut}
+            cancellationPolicy={spot.CancellationPolicy.description}
+            arrivalType={spot.ArrivalType.description}
+            minStay={spot.minStay}
+            bookingPeriod={spot.bookingPeriod}
+          />
         </div>
         <BookForm
           price={spot.price}
@@ -51,7 +73,7 @@ const Spot = () => {
           checkOut={spot.checkOut}
           maxGuests={spot.maxGuests}
         />
-        <div className='spot-raw'>{JSON.stringify (spot)}</div>
+        {/* <div className='spot-raw'>{JSON.stringify (spot)}</div> */}
       </div>
     </div>
   )

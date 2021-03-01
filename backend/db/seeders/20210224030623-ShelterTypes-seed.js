@@ -15,6 +15,12 @@ module.exports = {
       {
         description: 'Uncovered Deck'
       },
+      {
+        description: 'None'
+      },
+      {
+        description: 'Tent'
+      },
     ], {});
   },
 

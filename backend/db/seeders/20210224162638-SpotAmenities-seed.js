@@ -61,47 +61,47 @@ module.exports = {
       {
         spotId: 3,
         amenityId: 1,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 2,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 3,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 4,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 5,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 6,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 7,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 8,
-        available: true,
+        available: false,
       },
       {
         spotId: 3,
         amenityId: 9,
-        available: true,
+        available: false,
       },
       {
         spotId: 4,
