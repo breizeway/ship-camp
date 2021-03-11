@@ -15,9 +15,9 @@ const Map = () => {
 
   const onLoad = useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
-    bounds.Pa.g = 300;
-    bounds.Pa.i = -50;
-    bounds.Va.g = 50;
+    // bounds.Pa.g = 300;
+    // bounds.Pa.i = -50;
+    // bounds.Va.g = 50;
     map.fitBounds(bounds);
     setMap(map)
   }, [])
