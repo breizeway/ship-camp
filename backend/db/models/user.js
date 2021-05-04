@@ -72,8 +72,8 @@ module.exports = (sequelize, DataTypes) => {
   return an object with the User instance information that is safe to save to a JWT.
   */
   User.prototype.toSafeObject = function() {
-    const { id, username, email, firstName, lastName, profileImageUrl } = this;
-    return { id, username, email, firstName, lastName, profileImageUrl };
+    const { id, username, email, firstName, lastName, profileImageUrl, createdAt } = this;
+    return { id, username, email, firstName, lastName, profileImageUrl, createdAt };
   }
   /*
   Define an instance method, User.prototype.validatePassword in the user.js model file that will

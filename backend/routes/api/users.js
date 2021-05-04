@@ -37,6 +37,27 @@ const validateSignup = [
 
 const router = express.Router();
 
+router.put(
+  '/',
+  asyncHandler(async (req, res, next) => {
+    const { username } = req.body;
+    console.log('   :::USERNAME:::   ', username);
+
+    const user = await User.findOne({
+      where: { username },
+    })
+
+    if (user) return res.json({user: user.toSafeObject()});
+    else {
+      const err = new Error('Server Error');
+      err.status = 500;
+      err.title = 'No such user exists';
+      err.errors = ['The user you are looking for does not exists'];
+      return next(err);
+    }
+  })
+)
+
 // Sign up
 router.post(
   '/',

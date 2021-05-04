@@ -1,0 +1,18 @@
+.user-card {
+  border: 1px solid var(--border);
+  padding: var(--padding__standard);
+}
+
+.user-card > *:not(.user-card > *:first-child) {
+  margin-top: calc(var(--padding__standard) / 2);
+}
+
+.user-card__pic-name {
+  display: flex;
+  align-items: center;
+}
+
+.user-card__pic-name > div:nth-child(2) {
+  margin-left: var(--padding__standard);
+  font-weight: bold;
+}

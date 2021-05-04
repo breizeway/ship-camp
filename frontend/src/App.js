@@ -8,11 +8,13 @@ import Spots from '../src/components/Spots';
 import Spot from '../src/components/Spot';
 import LoginFormPage from '../src/components/LoginFormPage';
 import SignupFormPage from '../src/components/SignupFormPage';
+import User from '../src/components/User';
 import * as sessionActions from './store/session';
 import * as apiKeyActions from './store/apiKeys';
 
 function App() {
   const isHome = useLocation().pathname === '/';
+  console.log('   :::ISHOME:::   ', isHome);
 
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -62,6 +64,9 @@ function App() {
               </Route>
               <Route path='/signup'>
                 <SignupFormPage />
+              </Route>
+              <Route path='/u/:username'>
+                <User />
               </Route>
             </Switch>
           )}

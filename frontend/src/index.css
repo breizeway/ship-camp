@@ -7,6 +7,7 @@
   --border: rgb(219, 215, 223);
 
   --padding-not-home: 30px;
+  --padding__standard: 20px;
 
   --narrow-view-max-width: 1280px;
   --narrow-view-padding: 72px;
@@ -65,6 +66,8 @@ img.x-form-date-trigger {
   max-width: var(--narrow-view-max-width);
   padding: 0 var(--narrow-view-padding) var(--narrow-view-padding);
 }
+
+
 
 .submit-button {
   color: white;
