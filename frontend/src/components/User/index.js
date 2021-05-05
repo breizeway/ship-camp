@@ -1,11 +1,13 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Redirect, Switch, Route } from 'react-router-dom'
 
 import './User.css'
 import * as userDataActions from '../../store/users'
 import * as userActions from '../../store/components/user'
 import UserCard from '../UserCard'
+import ViewBar from '../ViewBar'
+import UserRedirect from '../UserRedirect'
 
 
 const User = () => {
@@ -29,13 +31,38 @@ const User = () => {
         })()
     }
 
+    const views = {
+        trips: 'Trips',
+        saves: 'Saves',
+        reviews: 'Reviews',
+    }
+
     if (!rendered.val) return null
 
     if (!user.val?.id) return <Redirect to='/' />
 
+    const className = 'user'
+
     return (
-        <div className='user'>
-            <UserCard user={user} />
+        <div className={className}>
+            <UserCard user={user} addClass={className} />
+            <div className='user__content'>
+                <ViewBar fragmentIndex={3} views={views} addClass={className} />
+                <Switch>
+                    <Route path='/u/:username/trips'>
+                        <div>trips</div>
+                    </Route>
+                    <Route path='/u/:username/saves'>
+                        <div>saves</div>
+                    </Route>
+                    <Route path='/u/:username/reviews'>
+                        <div>reviews</div>
+                    </Route>
+                    <Route path='/u/:username/*'>
+                        <UserRedirect />
+                    </Route>
+                </Switch>
+            </div>
         </div>
     )
 }

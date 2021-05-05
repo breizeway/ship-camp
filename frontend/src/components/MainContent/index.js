@@ -7,7 +7,6 @@ import './MainContent.css'
 const MainContent = props => {
     const pathname = useLocation().pathname
     const isHome = pathname === '/'
-    console.log('   :::ISHOME:::   ', isHome);
 
     return (
         <div

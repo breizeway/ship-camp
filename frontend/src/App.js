@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 
 import Navigation from '../src/components/Navigation';
@@ -17,6 +17,7 @@ import * as apiKeyActions from './store/apiKeys';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const userViews = useSelector(state => state.components.User.views)
 
   useEffect(async () => {
     await dispatch(sessionActions.restoreUser())
@@ -58,19 +59,11 @@ function App() {
           <Route path='/signup'>
             <SignupFormPage />
           </Route>
-          <Route path='/u/:username'>
+          <Route path='/u/:username' exact={true}>
+            <UserRedirect />
+          </Route>
+          <Route path='/u/:username/*'>
             <User />
-            <Switch>
-              <Route path='/u/:username/trips'>
-                <div>trips</div>
-              </Route>
-              <Route path='/u/:username/reviews'>
-                <div>reviews</div>
-              </Route>
-              <Route path='/u/:username/*'>
-                <UserRedirect />
-              </Route>
-            </Switch>
           </Route>
         </Switch>
       </MainContent>

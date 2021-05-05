@@ -1,0 +1,22 @@
+.view-bar {
+  display: inline-flex;
+  font-weight: 500;
+  height: 32px;
+}
+
+.view-bar > *:not(.view-bar > *:first-child) {
+  margin-left: var(--padding__large);
+}
+
+.view-bar__header {
+  display: block;
+  border-bottom: 3px solid rgb(233, 233, 233);
+  text-decoration: none;
+  color: inherit;
+  transition: .1s;
+  font-size: larger;
+}
+
+.view-bar__header.active {
+  border-bottom-color: var(--theme2);
+}

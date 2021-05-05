@@ -7,7 +7,7 @@ import ProfileImg from '../ProfileImg'
 import { monthName } from '../../services/dates'
 
 
-const UserCard = () => {
+const UserCard = ({ addClass }) => {
     const { username } = useParams()
 
     const user = useSelector(state => state.users.all[username])
@@ -15,7 +15,7 @@ const UserCard = () => {
     const userCreatedDate = new Date(user.createdAt)
 
     return (
-        <div className='user-card'>
+        <div className={`user-card ${addClass}`}>
             <div className='user-card__pic-name'>
                 <ProfileImg
                     url={user.profileImageUrl}
