@@ -10,14 +10,20 @@ const setUser = user => {
 }
 
 export const runSetSpot = username => async dispatch => {
-  const response = await csrfFetch('/api/users', {
-    method: 'PUT',
-    body: JSON.stringify({
-      username,
-    }),
-  });
-  const { user } = await response.json();
-  dispatch(setUser(user));
+  try {
+    const response = await csrfFetch('/api/users', {
+      method: 'PUT',
+      body: JSON.stringify({
+        username,
+      }),
+    });
+    const { user } = await response.json();
+    dispatch(setUser(user));
+
+  } catch(e) {
+    console.log('   :::E:::   ', e);
+
+  }
 };
 
 const initialState = {

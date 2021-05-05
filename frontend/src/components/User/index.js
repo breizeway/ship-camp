@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 
 import './User.css'
 import * as userDataActions from '../../store/users'
@@ -29,7 +29,9 @@ const User = () => {
         })()
     }
 
-    if (!user.val) return null
+    if (!rendered.val) return null
+
+    if (!user.val?.id) return <Redirect to='/' />
 
     return (
         <div className='user'>
