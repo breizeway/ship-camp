@@ -16,4 +16,5 @@
 .user-card__pic-name > div:nth-child(2) {
   margin-left: var(--padding__standard);
   font-weight: bold;
+  font-size: larger;
 }

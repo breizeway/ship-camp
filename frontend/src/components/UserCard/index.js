@@ -8,7 +8,8 @@ import { monthName } from '../../services/dates'
 
 
 const UserCard = ({ addClass }) => {
-    const { username } = useParams()
+    let { username } = useParams()
+    username = username.toLowerCase()
 
     const user = useSelector(state => state.users.all[username])
 

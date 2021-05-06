@@ -41,10 +41,9 @@ router.put(
   '/',
   asyncHandler(async (req, res, next) => {
     const { username } = req.body;
-    console.log('   :::USERNAME:::   ', username);
 
     const user = await User.findOne({
-      where: { username },
+      where: { username: username.toLowerCase() },
     })
 
     if (user) return res.json({user: user.toSafeObject()});
@@ -67,8 +66,8 @@ router.post(
     const { email, password, username, firstName, lastName } = req.body;
     const profileImageUrl = await singlePublicFileUpload(req.file);
     const user = await User.signup({
-      email,
-      username,
+      email: email.toLowerCase(),
+      username: username.toLowerCase(),
       password,
       firstName,
       lastName,

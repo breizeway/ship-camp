@@ -34,7 +34,7 @@ const LoginFormPage = () => {
     <div className='credential-page'>
       <div className='credential-page__content'>
         <div className='credential-page__content-welcome'>Welcome back!</div>
-        <div className='credential-page__content-phrase'>Let's get you back on a ship.</div>
+        <div className='credential-page__content-phrase'>Let's get you on a ship again.</div>
         <div>
           {validationErrors && validationErrors.map((error, idx) => (
             <p key={idx}>{error}</p>

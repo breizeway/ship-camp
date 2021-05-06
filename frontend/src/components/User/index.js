@@ -12,7 +12,8 @@ import UserRedirect from '../UserRedirect'
 
 const User = () => {
     const dispatch = useDispatch()
-    const { username } = useParams()
+    let { username } = useParams()
+    username = username.toLowerCase()
 
     const rendered = {
         val: useSelector(state => state.components.User.rendered.has(username)),
