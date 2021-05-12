@@ -10,7 +10,7 @@ const fakeUsers = (numUsers) => {
     const userObj = {};
     userObj.lastName = faker.name.lastName();
     userObj.firstName = faker.name.firstName();
-    userObj.username = `${userObj.firstName}_${userObj.lastName}`;
+    userObj.username = `${userObj.firstName}_${userObj.lastName}`.toLowerCase();
     userObj.hashedPassword = bcrypt.hashSync(faker.internet.password());
     userObj.email = `${userObj.firstName}_${userObj.lastName}@${faker.internet.domainName()}`;
     userObj.profileImageUrl = profileImages[Math.floor(Math.random() * profileImages.length)];

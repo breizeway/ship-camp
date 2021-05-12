@@ -30,7 +30,7 @@ router.get(
         {model: User,
           as: 'Host',
           attributes: {
-            exclude: ['hashedPassword', 'email', 'username', 'isHost']
+            exclude: ['hashedPassword', 'email', 'isHost']
           }
         },
         {model: Photo},
@@ -55,7 +55,7 @@ router.get(
           model: User,
           as: 'Host',
           attributes: {
-            exclude: ['hashedPassword', 'email', 'username', 'isHost']
+            exclude: ['hashedPassword', 'email', 'isHost']
           }
         },
         {
@@ -69,7 +69,7 @@ router.get(
             model: User,
             as: 'Reviewer',
             attributes: {
-            exclude: ['hashedPassword', 'email', 'username', 'isHost']
+            exclude: ['hashedPassword', 'email', 'isHost']
           }
           }
         },

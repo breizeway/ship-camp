@@ -1,0 +1,20 @@
+.user {
+  display: grid;
+  grid-template: auto / 300px auto;
+  grid-template-areas:
+    "side content";
+  width: 100%;
+}
+
+.user.user-card {
+  grid-area: side;
+}
+
+.user.view-bar {
+  margin-bottom: var(--padding__large);
+}
+
+.user__content {
+  grid-area: content;
+  padding: 0 var(--padding__large);
+}

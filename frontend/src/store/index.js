@@ -4,11 +4,17 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import spotsReducer from './spots';
 import apiKeysReducer from './apiKeys';
+import componentReducer from './components'
+import usersReducer from './users'
+import appReducer from './app'
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     spots: spotsReducer,
     keys: apiKeysReducer,
+    components: componentReducer,
+    users: usersReducer,
+    app: appReducer,
 });
 
 let enhancer;

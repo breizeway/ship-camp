@@ -35,9 +35,7 @@ const Spot = () => {
           <SpotName name={spot.name} reviews={spot.Reviews}/>
           <div className='spot__host-desc'>
             <SpotHost
-              firstName={spot.Host.firstName}
-              lastName={spot.Host.lastName}
-              profileImageUrl={spot.Host.profileImageUrl}
+              host={spot.Host}
             />
             <SpotDescription description={spot.description} />
           </div>
