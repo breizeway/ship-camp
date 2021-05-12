@@ -56,7 +56,8 @@ const ProfileImg = ({ url, length, userId, username }) => {
                 width: `${length}px`,
                 height: `${length}px`,
                 borderRadius: `${length/2}px`,
-                backgroundImage: url ? `url(${url})` : null
+                backgroundImage: url ? `url(${url})` : null,
+                backgroundSize: 'cover',
             }}
         />
     ) : (
@@ -70,7 +71,7 @@ const ProfileImg = ({ url, length, userId, username }) => {
                 minHeight: `${length}px`,
                 borderRadius: `${length/2}px`,
                 fontSize: `${length * 0.4}px`,
-                color: light ? 'black' : 'white'
+                color: light ? 'black' : 'white',
             }}
         >
             {username.slice(0, 2)}

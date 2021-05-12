@@ -9,7 +9,7 @@ const setUser = user => {
   }
 }
 
-export const runSetSpot = username => async dispatch => {
+export const runSetUser = username => async dispatch => {
   try {
     const response = await csrfFetch('/api/users', {
       method: 'PUT',
@@ -22,7 +22,6 @@ export const runSetSpot = username => async dispatch => {
 
   } catch(e) {
     console.log('   :::E:::   ', e);
-
   }
 };
 

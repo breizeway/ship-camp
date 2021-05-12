@@ -8,6 +8,7 @@ import * as userActions from '../../store/components/user'
 import UserCard from '../UserCard'
 import ViewBar from '../ViewBar'
 import UserRedirect from '../UserRedirect'
+import UserReviews from '../UserReviews'
 
 
 const User = () => {
@@ -22,19 +23,19 @@ const User = () => {
 
     const user = {
         val: useSelector(state => state.users.all[username]),
-        set: () => dispatch(userDataActions.runSetSpot(username)),
+        set: () => dispatch(userDataActions.runSetUser(username)),
     }
 
     if (!rendered.val) {
         (async () => {
-            await dispatch(userDataActions.runSetSpot(username))
+            await user.set()
             rendered.set()
         })()
     }
 
     const views = {
         trips: 'Trips',
-        saves: 'Saves',
+        // saves: 'Saves',
         reviews: 'Reviews',
     }
 
@@ -53,11 +54,11 @@ const User = () => {
                     <Route path='/u/:username/trips'>
                         <div>trips</div>
                     </Route>
-                    <Route path='/u/:username/saves'>
+                    {/* <Route path='/u/:username/saves'>
                         <div>saves</div>
-                    </Route>
+                    </Route> */}
                     <Route path='/u/:username/reviews'>
-                        <div>reviews</div>
+                        <UserReviews />
                     </Route>
                     <Route path='/u/:username/*'>
                         <UserRedirect />

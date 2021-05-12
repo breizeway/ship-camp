@@ -88,3 +88,7 @@ img.x-form-date-trigger {
   color: var(--theme2);
   transition-duration: 0.2s;
 }
+
+.faded-text {
+  color: gray;
+}
