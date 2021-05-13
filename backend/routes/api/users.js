@@ -45,6 +45,7 @@ router.put(
     const user = await User.findOne({
       where: { username: username.toLowerCase() },
     })
+    console.log('   :::USER:::   ', user.spots);
 
     if (user) return res.json({user: user.toSafeObject()});
     else {

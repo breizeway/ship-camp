@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 import './UserTrips.css'
 import * as userTripsActions from '../../store/components/user-trips'
-// import * as bookindsDataActions from '../../store/components/bookings'
+// import * as bookingsDataActions from '../../store/components/bookings'
 
 
 const UserTrips = () => {

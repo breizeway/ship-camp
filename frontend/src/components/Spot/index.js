@@ -71,9 +71,8 @@ const Spot = () => {
         </div>
         <BookForm
           price={spot.price}
-          checkIn={spot.checkIn}
-          checkOut={spot.checkOut}
           maxGuests={spot.maxGuests}
+          spotId={spot.id}
         />
       </div>
     </div>

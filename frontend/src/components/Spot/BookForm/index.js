@@ -1,8 +1,14 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import './index.css';
+import * as spotActions from '../../../store/spots'
 
-const BookForm = ({ price, checkIn, checkOut, maxGuests }) => {
+const BookForm = ({ price, maxGuests, spotId }) => {
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const loggedInUser = useSelector(state => state.session.user)
 
   const guestOptions = ((maxGuests) => {
     const guests = [];
@@ -14,8 +20,16 @@ const BookForm = ({ price, checkIn, checkOut, maxGuests }) => {
   const [checkInDate, setCheckInDate] = useState('')
   const [checkOutDate, setCheckOutDate] = useState('')
 
-  const submitHandler = e => {
+  const submitHandler = async e => {
     e.preventDefault();
+    await dispatch(spotActions.bookSpot(
+      loggedInUser.id,
+      spotId,
+      checkInDate,
+      checkOutDate,
+      numGuests
+      ))
+    history.push(`/u/${loggedInUser.username}`)
   }
 
   return (

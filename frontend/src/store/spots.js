@@ -1,7 +1,8 @@
 import { csrfFetch } from './csrf';
 
-const SET_SEARCHED_SPOTS = 'session/setSearchedSpots';
-const SET_SPOT = 'session/setSpot';
+const SET_SEARCHED_SPOTS = 'spots/setSearchedSpots';
+const SET_SPOT = 'spots/setSpot';
+const BOOK_SPOT = 'spots/bookSpot';
 
 const setSearchedSpots = spots => {
   return {
@@ -29,6 +30,18 @@ export const getSpot = id => async dispatch => {
   const returnedSpot = await response.json();
   const spot = await dispatch(setSpot(returnedSpot));
   return spot.payload.spot;
+}
+
+export const bookSpot = (userId, spotId, startDate, endDate, guests) => async dispatch => {
+  const response = await csrfFetch(`/api/spots/book`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ userId, spotId, startDate, endDate, guests })
+  });
+  const booking = await response.json();
+  return booking
 }
 
 const initialState = {

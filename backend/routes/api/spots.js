@@ -11,8 +11,11 @@ const {
   User,
   Photo,
   Amenity,
-  Review
+  Review,
+  Booking
 } = require('../../db/models');
+
+const models = require('../../db/models');
 const Op = Sequelize.Op;
 
 const router = express.Router();
@@ -76,6 +79,23 @@ router.get(
       ]
     })
     return res.json({spot});
+  })
+)
+
+router.post(
+  '/book',
+  asyncHandler(async (req, res) => {
+    const { userId, spotId, startDate, endDate, guests } = req.body
+
+    const booking = await Booking.create({
+      userId,
+      spotId,
+      startDate,
+      endDate,
+      guests
+    })
+
+    return res.json({booking});
   })
 )
 
