@@ -8,19 +8,23 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Users'
-        }
-      },
       spotId: {
         allowNull: false,
-        type: Sequelize.INTEGER,
         references: {
           model: 'Spots'
-        }
+        },
+        type: Sequelize.INTEGER
+      },
+      userId: {
+        allowNull: false,
+        references: {
+          model: 'Users'
+        },
+        type: Sequelize.INTEGER
+      },
+      guests: {
+        allowNull: false,
+        type: Sequelize.INTEGER
       },
       startDate: {
         allowNull: false,
@@ -30,11 +34,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      guests: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        default: 1
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -42,7 +41,7 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
+      }
     });
   },
   down: (queryInterface, Sequelize) => {

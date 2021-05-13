@@ -67,6 +67,16 @@ module.exports = (sequelize, DataTypes) => {
       },
     }
   });
+  User.associate = function(models) {
+    const bookingColumnMapping = {
+      through: 'Booking',
+      foreignKey: 'userId',
+      otherKey: 'spotId',
+      as: 'Bookings'
+    }
+
+    User.belongsToMany(models.Spot, bookingColumnMapping);
+  };
   /*
   Define an instance method, User.prototype.toSafeObject, in the user.js model file that will
   return an object with the User instance information that is safe to save to a JWT.
@@ -128,14 +138,6 @@ module.exports = (sequelize, DataTypes) => {
       profileImageUrl
     });
     return await User.scope('currentUser').findByPk(user.id);
-  };
-  User.associate = function(models) {
-    const bookingColumnMapping = {
-      through: 'Booking',
-      foreignKey: 'userId',
-      otherKey: 'spotId'
-    }
-    User.belongsToMany(models.Spot, bookingColumnMapping);
   };
   return User;
 };

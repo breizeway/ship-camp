@@ -117,7 +117,8 @@ module.exports = (sequelize, DataTypes) => {
     const bookingColumnMapping = {
       through: 'Booking',
       foreignKey: 'spotId',
-      otherKey: 'userId'
+      otherKey: 'userId',
+      as: 'Bookings'
     }
     Spot.belongsToMany(models.User, bookingColumnMapping);
   };

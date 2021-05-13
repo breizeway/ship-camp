@@ -62,6 +62,13 @@ router.get(
           }
         },
         {
+          model: User,
+          as: 'Bookings',
+          attributes: {
+            exclude: ['hashedPassword', 'email', 'isHost']
+          }
+        },
+        {
           model: Photo,
           order: ['id']
         },
@@ -73,7 +80,7 @@ router.get(
             as: 'Reviewer',
             attributes: {
             exclude: ['hashedPassword', 'email', 'isHost']
-          }
+            }
           }
         },
       ]

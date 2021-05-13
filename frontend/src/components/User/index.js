@@ -25,6 +25,7 @@ const User = () => {
         val: useSelector(state => state.users.all[username]),
         set: () => dispatch(userDataActions.runSetUser(username)),
     }
+    console.log('   :::USER:::   ', user.val);
 
     if (!rendered.val) {
         (async () => {

@@ -26,6 +26,7 @@ const Spot = () => {
   }, [])
 
   const spot = useSelector(state => state.spots.spot);
+  console.log('   :::SPOT:::   ', spot);
 
   return spot && (
     <div className='spot'>
