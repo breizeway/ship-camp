@@ -1,0 +1,19 @@
+.user-trip {
+  display: flex;
+}
+
+.user-trip > * {
+  width: 50%;
+}
+
+.user-trip > .spot-card {
+  min-width: 225px;
+}
+
+.user-trip__trip {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: var(--padding__standard);
+  padding-left: var(--padding__standard)
+}

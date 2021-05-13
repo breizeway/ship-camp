@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Redirect, Switch, Route } from 'react-router-dom'
 
@@ -9,6 +9,7 @@ import UserCard from '../UserCard'
 import ViewBar from '../ViewBar'
 import UserRedirect from '../UserRedirect'
 import UserReviews from '../UserReviews'
+import UserTrips from '../UserTrips'
 
 
 const User = () => {
@@ -25,18 +26,13 @@ const User = () => {
         val: useSelector(state => state.users.all[username]),
         set: () => dispatch(userDataActions.runSetUser(username)),
     }
-    console.log('   :::USER:::   ', user.val);
 
-    if (!rendered.val) {
-        (async () => {
-            await user.set()
-            rendered.set()
-        })()
-    }
+    useEffect(() => {
+        user.set()
+    }, [])
 
     const views = {
         trips: 'Trips',
-        // saves: 'Saves',
         reviews: 'Reviews',
     }
 
@@ -48,16 +44,15 @@ const User = () => {
 
     return (
         <div className={className}>
-            <UserCard user={user} addClass={className} />
+            <div>
+                <UserCard user={user} addClass={className} />
+            </div>
             <div className='user__content'>
                 <ViewBar fragmentIndex={3} views={views} addClass={className} />
                 <Switch>
                     <Route path='/u/:username/trips'>
-                        <div>trips</div>
+                        <UserTrips trips={user.val?.Bookings}/>
                     </Route>
-                    {/* <Route path='/u/:username/saves'>
-                        <div>saves</div>
-                    </Route> */}
                     <Route path='/u/:username/reviews'>
                         <UserReviews />
                     </Route>

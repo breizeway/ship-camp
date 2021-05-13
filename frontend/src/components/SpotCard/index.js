@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 import './index.css';
 
-const SpotCard = ({ spot }) => {
+const SpotCard = ({ spot, styles={}, children }) => {
 
   return (
-    <div className='spot-card'>
+    <div className='spot-card' style={styles}>
       <div className='spot-card__main'>
         <Link
           to={`/spots/${spot.id}`}
@@ -23,6 +23,9 @@ const SpotCard = ({ spot }) => {
             </div>
             <div className='spot-card__reviews-div'>
               <div className='spot-card__reviews'>{spot.Reviews.length} Reviews</div>
+            </div>
+            <div>
+              {children}
             </div>
             <div className='spot-card__price-host-div'>
               <div className='spot-card__host'>

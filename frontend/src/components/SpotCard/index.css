@@ -1,7 +1,7 @@
 .spot-card {
   height: 400px;
   width: 100%;
-  padding: var(--padding-not-home);
+  padding: var(--padding__standard);
 }
 
 .spot-card__main {
