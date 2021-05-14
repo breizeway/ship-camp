@@ -118,4 +118,20 @@ router.patch(
   })
 )
 
+router.post(
+  '/review',
+  asyncHandler(async (req, res) => {
+    const { text, recommended, spotId, userId } = req.body
+
+    const review = await Review.create({
+      text,
+      recommended,
+      spotId,
+      userId,
+    })
+
+    return res.json({review});
+  })
+)
+
 module.exports = router;

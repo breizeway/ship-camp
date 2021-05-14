@@ -14,3 +14,8 @@
   font-weight: 500;
   border: 1px solid var(--border);
 }
+
+.spot-reviews__add:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

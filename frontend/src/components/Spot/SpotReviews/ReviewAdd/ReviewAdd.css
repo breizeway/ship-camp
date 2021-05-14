@@ -1,0 +1,39 @@
+.review-add {
+  margin-top: var(--padding__small);
+}
+
+.review-add__recommended {
+  display: flex;
+  margin-bottom: var(--padding__small);
+}
+
+.review-add__recommended > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: var(--padding__small);
+}
+
+.review-add__recommended-text {
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+}
+
+.review-add__text {
+  width: 100%;
+  height: 100px;
+  padding: var(--padding__small);
+}
+
+.review-add__controls {
+  display: flex;
+}
+
+.review-add__controls > button:nth-child(1) {
+  margin-right: var(--padding__small);
+}
+
+.review-add__controls > button:nth-child(2) {
+  margin-left: var(--padding__small);
+}

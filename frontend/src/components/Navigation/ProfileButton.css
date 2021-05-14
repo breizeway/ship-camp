@@ -17,7 +17,7 @@
   top: 80px;
   /* right: 15px; */
   border: 1px solid var(--border);
-  width: 400px;
+  width: 250px;
   padding: 20px;
   background-color: white;
   border-radius: 2px;
@@ -65,7 +65,7 @@
   padding-bottom: 0;
 }
 
-.profile-dropdown > div:last-child:hover {
+.profile-dropdown > div:not(.profile-dropdown > div:nth-child(2)):hover {
   cursor: pointer;
   text-decoration: underline;
 }

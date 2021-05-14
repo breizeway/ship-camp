@@ -10,7 +10,6 @@ import TripControls from './TripControls'
 
 
 const UserTrips = ({ trips }) => {
-    console.log('   :::TRIPS:::   ', trips);
     trips.sort((tripA, tripB) => {
         const dateA = new Date(tripA.startDate)
         const dateB = new Date(tripB.startDate)

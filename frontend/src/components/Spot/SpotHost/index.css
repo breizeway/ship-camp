@@ -1,8 +1,12 @@
-.spot-host {
-  display: grid;
-  grid-template: 1fr / 120px 90px;
-  grid-template-areas:
-    "pic text";
+  .spot-host {
+    display: grid;
+    grid-template: 1fr / 120px 90px;
+    grid-template-areas:
+      "pic text";
+  }
+
+  .spot-host:hover {
+    cursor: pointer;
   }
 
   .spot-host__photo {

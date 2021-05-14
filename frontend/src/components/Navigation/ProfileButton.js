@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useHistory } from 'react-router-dom'
 
 import * as sessionActions from '../../store/session';
 import './ProfileButton.css'
 
 function ProfileButton({ user }) {
+  const history = useHistory()
   const dispatch = useDispatch();
   const isHome = useLocation().pathname === '/';
 
@@ -47,27 +48,15 @@ function ProfileButton({ user }) {
       </div>
       {showMenu && (
         <div className='profile-dropdown' style={{width: !user && '150px'}}>
-          <div class='profile-dropdown__triangle-gray'>
-            <div class='profile-dropdown__triangle-white' />
+          <div className='profile-dropdown__triangle-gray'>
+            <div className='profile-dropdown__triangle-white' />
           </div>
           {user && (
             <>
               <div>
-                <p>Username:</p>
-                <p>{user.username}</p>
+                <strong>{user.username}</strong>
               </div>
-              <div>
-                <p>Email:</p>
-                <p>{user.email}</p>
-              </div>
-              <div>
-                <p>First Name:</p>
-                <p>{user.firstName}</p>
-              </div>
-              <div>
-                <p>Last Name:</p>
-                <p>{user.lastName}</p>
-              </div>
+              <div onClick={() => history.push(`/u/${user.username}`)}>Account</div>
               <div onClick={logout}>Log Out</div>
             </>
           )}
