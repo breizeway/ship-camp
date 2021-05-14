@@ -63,6 +63,18 @@ export const bookSpot = (userId, spotId, startDate, endDate, guests) => async ()
   return booking
 }
 
+export const reviewSpot = (text, recommended, spotId, userId) => async dispatch => {
+  const response = await csrfFetch(`/api/spots/review`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ text, recommended, spotId, userId })
+  });
+  const review = await response.json();
+  return review
+}
+
 const initialState = {
   searchedSpots: null,
   randomSpots: null,

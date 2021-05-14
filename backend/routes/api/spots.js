@@ -118,6 +118,7 @@ router.patch(
   })
 )
 
+
 router.put(
   '/random',
   asyncHandler(async (req, res) => {
@@ -136,7 +137,23 @@ router.put(
       ]
     })
 
-    return res.json({spots});
+    return res.json({spots});    
+  })
+)
+
+router.post(
+  '/review',
+  asyncHandler(async (req, res) => {
+    const { text, recommended, spotId, userId } = req.body
+
+    const review = await Review.create({
+      text,
+      recommended,
+      spotId,
+      userId,
+    })
+
+    return res.json({review});
   })
 )
 

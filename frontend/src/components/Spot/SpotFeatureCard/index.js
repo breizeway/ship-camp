@@ -11,7 +11,6 @@ const SpotFeatureCard = ({ type,  items }) => {
           <CardItem item={item} key={item.id}/>
         ))}
       </div>
-      <div className='spot-feature-card__more-details'>More details</div>
     </div>
   )
 }
