@@ -15,7 +15,6 @@ const {
   Booking
 } = require('../../db/models');
 
-const models = require('../../db/models');
 const Op = Sequelize.Op;
 
 const router = express.Router();
@@ -61,13 +60,7 @@ router.get(
             exclude: ['hashedPassword', 'email', 'isHost']
           }
         },
-        {
-          model: User,
-          as: 'Bookings',
-          attributes: {
-            exclude: ['hashedPassword', 'email', 'isHost']
-          }
-        },
+        {model: Booking},
         {
           model: Photo,
           order: ['id']
@@ -94,12 +87,31 @@ router.post(
   asyncHandler(async (req, res) => {
     const { userId, spotId, startDate, endDate, guests } = req.body
 
+    const errors = []
+    if (startDate <= new Date()) errors.push('Check in date must be in the future')
+    if (startDate >= endDate) errors.push('Check out date must be after check in date')
+
+    if (errors.length) return res.json({errors})
+
     const booking = await Booking.create({
       userId,
       spotId,
       startDate,
       endDate,
       guests
+    })
+
+    return res.json({booking});
+  })
+)
+
+router.patch(
+  '/book',
+  asyncHandler(async (req, res) => {
+    const { bookingId } = req.body
+
+    const booking = await Booking.destroy({
+      where: {id: bookingId}
     })
 
     return res.json({booking});

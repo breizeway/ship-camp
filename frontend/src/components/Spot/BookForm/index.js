@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
@@ -16,20 +16,31 @@ const BookForm = ({ price, maxGuests, spotId }) => {
     return guests;
   })(maxGuests);
 
-  const [numGuests, setNumGuests] = useState(1);
+  const [numGuests, setNumGuests] = useState(1)
   const [checkInDate, setCheckInDate] = useState('')
   const [checkOutDate, setCheckOutDate] = useState('')
+  const [valErrors, setValErrors] = useState([])
 
   const submitHandler = async e => {
     e.preventDefault();
-    await dispatch(spotActions.bookSpot(
-      loggedInUser.id,
-      spotId,
-      checkInDate,
-      checkOutDate,
-      numGuests
+    const errors = []
+
+    if (!checkInDate || !checkOutDate) errors.push('Please enter the dates for your stay')
+    if ((checkInDate && checkOutDate) && new Date(checkInDate) <= new Date()) errors.push('The check in date must be in the future')
+    if ((checkInDate && checkOutDate) && checkOutDate <= checkInDate) errors.push('The check out date must after the check in date')
+
+    setValErrors(errors)
+
+    if (!errors.length) {
+      await dispatch(spotActions.bookSpot(
+        loggedInUser.id,
+        spotId,
+        checkInDate,
+        checkOutDate,
+        numGuests
       ))
-    history.push(`/u/${loggedInUser.username}`)
+      history.push(`/u/${loggedInUser.username}`)
+    }
   }
 
   return (
@@ -71,9 +82,16 @@ const BookForm = ({ price, maxGuests, spotId }) => {
         <div className='book-form__subtotal'>
           Subtotal
         </div>
-        <div className='book-form__button'>
-          <button className='book-form__button-button submit-button' type='submit'>Book</button>
-        </div>
+        {loggedInUser && (
+          <div className='book-form__button'>
+            <button className='book-form__button-button submit-button' type='submit'>Book</button>
+            <div>
+              {valErrors.length !== 0 && valErrors.map((error, i) => (
+                <div key={i}>{error}</div>
+              ))}
+            </div>
+          </div>
+        )}
       </form>
     </div>
   )

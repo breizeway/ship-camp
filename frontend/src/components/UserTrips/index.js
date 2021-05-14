@@ -11,6 +11,13 @@ import TripControls from './TripControls'
 
 const UserTrips = ({ trips }) => {
     console.log('   :::TRIPS:::   ', trips);
+    trips.sort((tripA, tripB) => {
+        const dateA = new Date(tripA.startDate)
+        const dateB = new Date(tripB.startDate)
+
+        return dateB - dateA
+    })
+
     const dispatch = useDispatch()
     let { username } = useParams()
     username = username.toLowerCase()
@@ -33,12 +40,12 @@ const UserTrips = ({ trips }) => {
                     <div className='user-trip' key={i}>
                         <SpotCard
                             styles={{paddingLeft: '0', paddingRight: '0'}}
-                            spot={trip}
+                            spot={trip.Spot}
                         >
                         </SpotCard>
                         <div className='user-trip__trip'>
-                            <TripDetails booking={trip.Booking} price={trip.price}/>
-                            <TripControls />
+                            <TripDetails booking={trip} price={trip.price}/>
+                            <TripControls booking={trip} />
                         </div>
                     </div>
                 ))

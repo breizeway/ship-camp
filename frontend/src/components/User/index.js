@@ -26,9 +26,11 @@ const User = () => {
         val: useSelector(state => state.users.all[username]),
         set: () => dispatch(userDataActions.runSetUser(username)),
     }
+    console.log('   :::USER:::   ', user.val);
 
-    useEffect(() => {
-        user.set()
+    useEffect(async () => {
+        await user.set()
+        rendered.set()
     }, [])
 
     const views = {

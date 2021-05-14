@@ -107,6 +107,7 @@ module.exports = (sequelize, DataTypes) => {
     Spot.belongsTo(models.User, {foreignKey: 'hostId', as: 'Host'});
     Spot.hasMany(models.Photo, {foreignKey: 'spotId'})
     Spot.hasMany(models.Review, {foreignKey: 'spotId'})
+    Spot.hasMany(models.Booking, {foreignKey: 'spotId'})
     //Spot.hasMany(models.SpotAmenity, {foreignKey: 'spotId'})
     const amenityColumnMapping = {
       through: 'SpotAmenity',
@@ -114,13 +115,13 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'amenityId'
     }
     Spot.belongsToMany(models.Amenity, amenityColumnMapping);
-    const bookingColumnMapping = {
-      through: 'Booking',
-      foreignKey: 'spotId',
-      otherKey: 'userId',
-      as: 'Bookings'
-    }
-    Spot.belongsToMany(models.User, bookingColumnMapping);
+    // const bookingColumnMapping = {
+    //   through: 'Booking',
+    //   foreignKey: 'spotId',
+    //   otherKey: 'userId',
+    //   as: 'Bookings'
+    // }
+    // Spot.belongsToMany(models.User, bookingColumnMapping);
   };
   return Spot;
 };

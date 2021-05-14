@@ -3,7 +3,7 @@ import React from 'react'
 import './TripDetails.css'
 
 
-const TripDetails = ({ booking, price }) => {
+const TripDetails = ({ booking }) => {
     console.log('   :::BOOKING:::   ', booking);
     const startDate = new Date(booking.startDate)
     const endDate = new Date(booking.endDate)
@@ -18,7 +18,7 @@ const TripDetails = ({ booking, price }) => {
             <div className='trip-details__header'>Guests:</div>
             <div>{booking.guests}</div>
             <div className='trip-details__header'>Total Paid:</div>
-            <div>{`$${price * days}`}</div>
+            <div>{`$${booking.Spot.price * days}`}</div>
         </div>
     )
 }

@@ -68,14 +68,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   User.associate = function(models) {
-    const bookingColumnMapping = {
-      through: 'Booking',
-      foreignKey: 'userId',
-      otherKey: 'spotId',
-      as: 'Bookings'
-    }
+    // const bookingColumnMapping = {
+    //   through: 'Booking',
+    //   foreignKey: 'userId',
+    //   otherKey: 'spotId',
+    //   as: 'Bookings'
+    // }
 
-    User.belongsToMany(models.Spot, bookingColumnMapping);
+    // User.hasMany(models.Spot, bookingColumnMapping);
+    User.hasMany(models.Booking, {foreignKey: 'userId'});
   };
   /*
   Define an instance method, User.prototype.toSafeObject, in the user.js model file that will
