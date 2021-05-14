@@ -5,20 +5,31 @@ import { useLocation } from 'react-router-dom';
 import './index.css';
 import './index-media.css';
 
-import { getSearchedSpots } from '../../store/spots';
+import { getSearchedSpots, getRandomSpots } from '../../store/spots';
 import SpotCard from '../SpotCard';
 import Map from '../Map';
 
-const Spots = () => {
+const Spots = ({ type='searched' }) => {
   const dispatch = useDispatch();
 
   const queryString = useLocation().search;
 
   useEffect(() => {
-    dispatch(getSearchedSpots(queryString));
+    if (queryString) dispatch(getSearchedSpots(queryString));
+    dispatch(getRandomSpots());
   }, [])
 
-  const spots = useSelector(state => state.spots.searchedSpots);
+  let slice = null;
+  switch (type) {
+    case 'random':
+      slice = 'randomSpots'
+      break;
+    default:
+      slice = 'searchedSpots'
+      break;
+  }
+
+  const spots = useSelector(state => state.spots[slice]);
 
   return (
     <div className='spots'>
@@ -30,9 +41,9 @@ const Spots = () => {
           ))
         }
       </div>
-      <div className='spots__map-half'>
+      {/* <div className='spots__map-half'>
         <Map />
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -28,7 +28,7 @@ const LoginFormPage = () => {
       })
   }
 
-  const demoUser = () => dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }));
+  const demoUser = () => dispatch(sessionActions.login({ credential: 'demo', password: 'password' }));
 
   return (
     <div className='credential-page'>
@@ -62,10 +62,10 @@ const LoginFormPage = () => {
           <div>
             <button type='submit' className='submit-button'>Log In</button>
           </div>
-          <div>
-            <button onClick={demoUser} className='demo-button'>Demo User</button>
-          </div>
         </form>
+        <div>
+          <button onClick={demoUser} className='demo-button'>Demo User</button>
+        </div>
       </div>
     </div>
   )

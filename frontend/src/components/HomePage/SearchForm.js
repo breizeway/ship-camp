@@ -35,7 +35,7 @@ const SearchForm = () => {
               ></input>
             </div>
           </div>
-          <div>
+          {/* <div>
             <label>Dates</label>
             <div>
               <div className='search-form__input-icon'>
@@ -48,7 +48,7 @@ const SearchForm = () => {
                 placeholder='mm/dd/yyyy'
               ></input>
             </div>
-          </div>
+          </div> */}
           <div>
             <label>Accomodations</label>
             <div>

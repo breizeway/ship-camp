@@ -19,3 +19,9 @@
   font-weight: 400;
   margin: 8px 0 60px;
 }
+
+.home-page__sites-header {
+  margin: var(--padding__standard) 0;
+  font-size: 25px;
+  width: 100%;
+}

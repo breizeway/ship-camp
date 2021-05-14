@@ -118,6 +118,29 @@ router.patch(
   })
 )
 
+
+router.put(
+  '/random',
+  asyncHandler(async (req, res) => {
+    const spots = await Spot.findAll({
+      order: ['createdAt'],
+      limit: 10,
+      include: [
+        {model: User,
+          as: 'Host',
+          attributes: {
+            exclude: ['hashedPassword', 'email', 'isHost']
+          }
+        },
+        {model: Photo},
+        {model: Review},
+      ]
+    })
+
+    return res.json({spots});    
+  })
+)
+
 router.post(
   '/review',
   asyncHandler(async (req, res) => {
