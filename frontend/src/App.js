@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
 import Navigation from '../src/components/Navigation';
 import HomePage from '../src/components/HomePage';
@@ -11,6 +11,7 @@ import SignupFormPage from '../src/components/SignupFormPage';
 import User from '../src/components/User';
 import MainContent from '../src/components/MainContent';
 import UserRedirect from '../src/components/UserRedirect';
+import PageNotFound from '../src/components/PageNotFound';
 import * as sessionActions from './store/session';
 import * as apiKeyActions from './store/apiKeys';
 
@@ -64,6 +65,9 @@ function App() {
           </Route>
           <Route path='/u/:username/*'>
             <User />
+          </Route>
+          <Route path='/*'>
+            <PageNotFound />
           </Route>
         </Switch>
       </MainContent>
