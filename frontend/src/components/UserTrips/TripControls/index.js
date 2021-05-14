@@ -21,7 +21,7 @@ const TripControls = ({ booking }) => {
 
     const submit = async e => {
         e.preventDefault()
-        const confirmed = window.confirm('Are you sure you want to cancel this booking? You cannot reverse his action.')
+        const confirmed = window.confirm('Are you sure you want to cancel this booking? You cannot reverse this action.')
         if (confirmed) await dispatch(cancelBooking(booking.id))
         dispatch(userDataActions.runSetUser(username))
     }

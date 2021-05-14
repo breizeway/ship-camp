@@ -25,7 +25,7 @@ const BookForm = ({ price, maxGuests, spotId }) => {
     e.preventDefault();
     const errors = []
 
-    if (!checkInDate || !checkOutDate) errors.push('The check in and check out dated cannot be blank')
+    if (!checkInDate || !checkOutDate) errors.push('The check in and check out dates cannot be blank')
     if ((checkInDate && checkOutDate) && new Date(checkInDate) <= new Date()) errors.push('The check in date must be in the future')
     if ((checkInDate && checkOutDate) && checkOutDate <= checkInDate) errors.push('The check out date must be after the check in date')
 
@@ -88,11 +88,13 @@ const BookForm = ({ price, maxGuests, spotId }) => {
         {loggedInUser ? (
           <div className='book-form__button'>
             <button className='book-form__button-button submit-button' type='submit'>Book</button>
-            <div className='val-errors'>
-              {valErrors.length !== 0 && valErrors.map((error, i) => (
-                <div key={i}>{error}</div>
-              ))}
-            </div>
+            {valErrors.length > 0 && (
+              <div className='val-errors'>
+                {valErrors.map((error, i) => (
+                  <div key={i}>{error}</div>
+                ))}
+              </div>
+            )}
           </div>
         ) : (
           <div style={{display: 'flex', alignItems: 'center'}}>
