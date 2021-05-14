@@ -8,6 +8,7 @@
   --color__error: #b11515;
 
   --padding-not-home: 30px;
+  --padding__small: 10px;
   --padding__standard: 20px;
   --padding__large: 40px;
 
@@ -111,4 +112,11 @@ img.x-form-date-trigger {
 
 .faded-text {
   color: gray;
+}
+
+.val-errors {
+  border: 2px solid var(--color__error);
+  color: var(--color__error);
+  padding: var(--padding__small);
+  margin-top: var(--padding__small)
 }

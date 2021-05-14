@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import './TripControls.css'
@@ -14,7 +14,10 @@ const TripControls = ({ booking }) => {
 
     const startDate = new Date(booking.startDate)
     const today = new Date()
-    const bookingIsEditable = today <= startDate
+
+    const loggedInUser = useSelector(state => state.session.user)
+
+    const bookingIsEditable = (today <= startDate) && (loggedInUser?.username === username)
 
     const submit = async e => {
         e.preventDefault()

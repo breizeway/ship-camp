@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 import './index.css';
 import * as spotActions from '../../../store/spots'
@@ -25,9 +25,9 @@ const BookForm = ({ price, maxGuests, spotId }) => {
     e.preventDefault();
     const errors = []
 
-    if (!checkInDate || !checkOutDate) errors.push('Please enter the dates for your stay')
+    if (!checkInDate || !checkOutDate) errors.push('The check in and check out dated cannot be blank')
     if ((checkInDate && checkOutDate) && new Date(checkInDate) <= new Date()) errors.push('The check in date must be in the future')
-    if ((checkInDate && checkOutDate) && checkOutDate <= checkInDate) errors.push('The check out date must after the check in date')
+    if ((checkInDate && checkOutDate) && checkOutDate <= checkInDate) errors.push('The check out date must be after the check in date')
 
     setValErrors(errors)
 
@@ -50,23 +50,26 @@ const BookForm = ({ price, maxGuests, spotId }) => {
           <div>${price}</div>
           <div>per night ({maxGuests} guests)</div>
         </div>
-        <div className='book-form__checkin book-form__check'>
-          <label>Check in</label>
-          <input
-            className='book-form__check-date-picker'
-            type='date'
-            value={checkInDate}
-            onChange={e => setCheckInDate(e.target.value)}
-          />
-        </div>
-        <div className='book-form__checkout book-form__check'>
-          <label>Check out</label>
-          <input
-            className='book-form__check-date-picker'
-            type='date'
-            value={checkOutDate}
-            onChange={e => setCheckOutDate(e.target.value)}
-          />
+        <div className='book-form__dates'>
+          <div className='book-form__checkin book-form__check'>
+            <label>Check in</label>
+            <input
+              className='book-form__check-date-picker'
+              type='date'
+              value={checkInDate}
+              onChange={e => setCheckInDate(e.target.value)}
+            />
+          </div>
+          <div className='book-form__checkout book-form__check'>
+            <label>Check out</label>
+            <input
+              className='book-form__check-date-picker'
+              type='date'
+              value={checkOutDate}
+              onChange={e => setCheckOutDate(e.target.value)}
+            />
+          </div>
+
         </div>
         <div className='book-form__guests'>
           <label>Guests</label>
@@ -82,14 +85,18 @@ const BookForm = ({ price, maxGuests, spotId }) => {
         <div className='book-form__subtotal'>
           Subtotal
         </div>
-        {loggedInUser && (
+        {loggedInUser ? (
           <div className='book-form__button'>
             <button className='book-form__button-button submit-button' type='submit'>Book</button>
-            <div>
+            <div className='val-errors'>
               {valErrors.length !== 0 && valErrors.map((error, i) => (
                 <div key={i}>{error}</div>
               ))}
             </div>
+          </div>
+        ) : (
+          <div style={{display: 'flex', alignItems: 'center'}}>
+            <Link to='/login'>Log in</Link>&nbsp;or&nbsp;<Link to ='/signup'>sign up</Link>&nbsp;to book this spot
           </div>
         )}
       </form>
