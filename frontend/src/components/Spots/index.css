@@ -2,7 +2,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template: auto / 1fr 1fr;
+  /* grid-template: auto / 1fr 1fr; */
 }
 
 .spots__cards-half {

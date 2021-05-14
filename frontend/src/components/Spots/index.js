@@ -9,7 +9,7 @@ import { getSearchedSpots } from '../../store/spots';
 import SpotCard from '../SpotCard';
 import Map from '../Map';
 
-const Spots = () => {
+const Spots = ({ type='searched' }) => {
   const dispatch = useDispatch();
 
   const queryString = useLocation().search;
@@ -18,7 +18,17 @@ const Spots = () => {
     dispatch(getSearchedSpots(queryString));
   }, [])
 
-  const spots = useSelector(state => state.spots.searchedSpots);
+  let spots
+  const randomSpots = useSelector(state => state.spots.searchedSpots);
+  const searchedSpots = useSelector(state => state.spots.searchedSpots);
+  switch (type) {
+    case 'random':
+      spots = randomSpots
+      break;
+    default:
+      spots = searchedSpots
+      break;
+  }
 
   return (
     <div className='spots'>
@@ -30,9 +40,9 @@ const Spots = () => {
           ))
         }
       </div>
-      <div className='spots__map-half'>
+      {/* <div className='spots__map-half'>
         <Map />
-      </div>
+      </div> */}
     </div>
   )
 }
