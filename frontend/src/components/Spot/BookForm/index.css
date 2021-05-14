@@ -6,23 +6,38 @@
 
 .book-form__form {
   width: 100%;
-  height: 300px;
   position: absolute;
   top: -40px;
   background-color: white;
   border: 1px solid var(--border);
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+  /* display: grid;
+  grid-template: repeat(3, 1fr) auto / repeat(2, 1fr);
   grid-template-areas:
     "price price"
     "checkIn checkOut"
     "guests guests"
-    /* "subtotal subtotal" */
-    "button button";
+    "subtotal subtotal"
+    "button button"; */
 }
 
 .book-form__form > div {
   padding: 10px;
+  min-height: 75px;
+}
+
+.book-form__dates {
+  display: flex;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--border);
+}
+
+.book-form__dates > div {
+  width: 50%;
+  padding: 10px;
+}
+
+.book-form__dates > div:first-child {
+  border-right: 1px solid var(--border);
 }
 
 .book-form * {
@@ -33,21 +48,12 @@
   font-weight: 500;
 }
 
-.book-form__form > div:nth-child(1) {
-  border-bottom: 1px solid var(--border);
-}
-
-.book-form__form > div:nth-child(2) {
-  border-right: 1px solid var(--border);
-}
-
-.book-form__form > div:nth-child(4) {
-  border-top: 1px solid var(--border);
+.book-form__form > div:not(.book-form__form > div:last-child) {
   border-bottom: 1px solid var(--border);
 }
 
 .book-form__price {
-  grid-area: price;
+  /* grid-area: price; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,14 +69,6 @@
   font-weight: 300;
   font-size: 13px;
   color: gray;
-}
-
-.book-form__checkIn {
-  grid-area: checkIn;
-}
-
-.book-form__checkOut {
-  grid-area: checkOut;
 }
 
 .book-form__check-date-picker {
@@ -100,7 +98,7 @@
 }
 
 .book-form__guests {
-  grid-area: guests;
+  /* grid-area: guests; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -122,20 +120,15 @@
 }
 
 .book-form__subtotal {
-  grid-area: subtotal;
   display: none;
-}
-
-.book-form__button {
-  grid-area: button;
 }
 
 .book-form__button-button {
   width: 100%;
-  height: 100%;
+  height: 55px;
   font-size: 16px;
 }
 
-.submit-button.submit-button:hover {
-  background-color: white;
+.submit-button:hover {
+  background-color: white !important;
 }

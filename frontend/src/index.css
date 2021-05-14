@@ -5,8 +5,10 @@
   --background: rgb(243, 242, 239);
   --background-darker: rgb(235, 234, 229);
   --border: rgb(219, 215, 223);
+  --color__error: #b11515;
 
   --padding-not-home: 30px;
+  --padding__small: 10px;
   --padding__standard: 20px;
   --padding__large: 40px;
 
@@ -68,7 +70,25 @@ img.x-form-date-trigger {
   padding: 0 var(--narrow-view-padding) var(--narrow-view-padding);
 }
 
+.button-cancel {
+  color: var(--color__error);
+  font-size: 18px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color__error);
+  background-color: white;
+  transition: 0.2s;
+}
 
+.button-cancel:hover {
+  cursor: pointer;
+  background-color: var(--color__error);
+  color: white;
+  transition: 0.2s;
+}
 
 .submit-button {
   color: white;
@@ -80,15 +100,23 @@ img.x-form-date-trigger {
   align-items: center;
   border: 2px solid var(--theme2);
   background-color: var(--theme2);
+  transition: 0.2s;
 }
 
 .submit-button:hover {
   cursor: pointer;
   background-color: var(--background);
   color: var(--theme2);
-  transition-duration: 0.2s;
+  transition: 0.2s;
 }
 
 .faded-text {
   color: gray;
+}
+
+.val-errors {
+  border: 2px solid var(--color__error);
+  color: var(--color__error);
+  padding: var(--padding__small);
+  margin-top: var(--padding__small)
 }

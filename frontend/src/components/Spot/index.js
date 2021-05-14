@@ -26,6 +26,7 @@ const Spot = () => {
   }, [])
 
   const spot = useSelector(state => state.spots.spot);
+  console.log('   :::SPOT:::   ', spot);
 
   return spot && (
     <div className='spot'>
@@ -71,9 +72,8 @@ const Spot = () => {
         </div>
         <BookForm
           price={spot.price}
-          checkIn={spot.checkIn}
-          checkOut={spot.checkOut}
           maxGuests={spot.maxGuests}
+          spotId={spot.id}
         />
       </div>
     </div>

@@ -1,0 +1,7 @@
+.trip-details__header {
+  font-weight: bold;
+}
+
+.trip-details__header:not(.trip-details__header:first-child) {
+  margin-top: var(--padding__standard);
+}

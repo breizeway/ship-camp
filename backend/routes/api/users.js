@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Spot, Review, Photo, Booking } = require('../../db/models');
 const { handleValidationErrors } = require('../../utils/validation');
 const { singlePublicFileUpload, singleMulterUpload } = require('../../backblazeS3');
 
@@ -44,9 +44,45 @@ router.put(
 
     const user = await User.findOne({
       where: { username: username.toLowerCase() },
-    })
+      include: [
+        {
+          model: Booking,
+          include: [
+            {
+              model: Spot,
+              include: [
+                {
+                  model: Review,
+                  include: {
+                    model: User,
+                    as: 'Reviewer',
+                    attributes: {
+                    exclude: ['hashedPassword', 'email', 'isHost']
+                    }
+                  }
+                },
+                {
+                  model: User,
+                  as: 'Host',
+                  attributes: {
+                    exclude: ['hashedPassword', 'email', 'isHost']
+                  }
+                },
+                {
+                  model: Photo,
+                  order: ['id']
+                },
+              ]
+            }
+          ]
 
-    if (user) return res.json({user: user.toSafeObject()});
+        },
+      ]
+    })
+    console.log('   :::USER:::   ', user);
+
+    if (user) return res.json({user});
+    // if (user) return res.json({user: user.toSafeObject()});
     else {
       const err = new Error('Server Error');
       err.status = 500;
