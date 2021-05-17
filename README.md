@@ -59,7 +59,7 @@ Shipcamp is deployed to Heroku at https://ship-camp.herokuapp.com/. To deploy th
 - install Heroky Postgres as a resource
 - add your environment variables
 - make sure you are in the root of your repository directory and log into Heroku with `heroku login`
-- add a new remote to your GitHub configuration with heroku `git:remote -a «your-app-name»`
+- add a new remote to your GitHub configuration with `heroku git:remote -a «your-app-name»`
 - add and commit your changes
 - push your changes to Heroku with `git push heroku`
 
