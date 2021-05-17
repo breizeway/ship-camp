@@ -33,7 +33,7 @@ Take a looke at the [database schema](https://github.com/breizeway/ship-camp/wik
 ## logo
 The logo was conceptualized and designed by me. It shows a launching space ship in the white space and the general shape represents a boat shown from an top-down view.
 <div style='max-width: 200px;'>
-  <img src='./assets/logo/bright-square.png'>
+  <img src='./assets/logo/bright-square.png' style='max-width: 200px;'>
 </div>
 
 ## getting started
