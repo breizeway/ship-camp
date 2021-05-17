@@ -28,10 +28,10 @@ In `./frontend/src/index.js`, the app is imported from `./frontend/src/app.js` a
 Take a look at the complete list of [features](https://github.com/breizeway/ship-camp/wiki/MVP-Features) in the wiki.
 
 ## database desing
-Take a looke at the [database schema](https://github.com/breizeway/ship-camp/wiki/Database-Schema) in the wiki.
+Take a look at the [database schema](https://github.com/breizeway/ship-camp/wiki/Database-Schema) in the wiki.
 
 ## logo
-The logo was conceptualized and designed by me. It shows a launching space ship in the white space and the general shape represents a boat shown from an top-down view.
+The logo was conceptualized and designed by me. It shows a launching space ship in the white space and the outline represents a boat shown from a top-down view.
 <div style='max-width: 200px;'>
   <img src='./assets/logo/bright-square.png' style='max-width: 200px;'>
 </div>
