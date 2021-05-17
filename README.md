@@ -27,7 +27,7 @@ In `./frontend/src/index.js`, the app is imported from `./frontend/src/app.js` a
 ## features
 Take a look at the complete list of [features](https://github.com/breizeway/ship-camp/wiki/MVP-Features) in the wiki.
 
-## database desing
+## database design
 Take a look at the [database schema](https://github.com/breizeway/ship-camp/wiki/Database-Schema) in the wiki.
 
 ## logo
