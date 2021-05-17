@@ -66,6 +66,6 @@ Shipcamp is deployed to Heroku at https://ship-camp.herokuapp.com/. To deploy th
 ### Updating the database
 If you have made changes to your database and you want to push those changes to Heroku:
 - run `heroku pg:reset --app heroku_app_name` to reset the database
-- then run `heroku pg:push localdbname HEROKU_DATABASE_NAME --app heroku_app_name` to copy your database to Heroku
+- then run `heroku pg:push local_db_name DATABASE_URL --app heroku_app_name` to copy your database to Heroku
 
 These commands should only be run during the development process because they will overwrite all data stored in the databe for the live site.
